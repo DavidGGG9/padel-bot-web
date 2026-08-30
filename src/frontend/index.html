@@ -171,7 +171,6 @@
 <main>
   <div class="filters">
     <select id="filter-city"><option value="">Toutes les villes</option></select>
-    <select id="filter-region"><option value="">Toutes les régions</option></select>
     <select id="filter-club"><option value="">Tous les clubs</option></select>
     <input class="search" id="filter-search" type="text" placeholder="Rechercher un club...">
     <button class="reset" id="reset">Réinitialiser les filtres</button>
@@ -186,7 +185,7 @@
   const DATA_URL = './availabilities.json';
   let allSlots = [];
   let days = [];
-  let state = { city: '', region: '', club: '', search: '', day: null };
+  let state = { city: '', club: '', search: '', day: null };
 
   function fmtTime(iso) {
     const d = new Date(iso);
@@ -225,13 +224,9 @@
 
   function populateFilterOptions() {
     const citySel = document.getElementById('filter-city');
-    const regionSel = document.getElementById('filter-region');
     const clubSel = document.getElementById('filter-club');
     uniqueSorted(allSlots.map(s => s.city)).forEach(v => {
       const o = document.createElement('option'); o.value = v; o.textContent = v; citySel.appendChild(o);
-    });
-    uniqueSorted(allSlots.map(s => s.region)).forEach(v => {
-      const o = document.createElement('option'); o.value = v; o.textContent = v; regionSel.appendChild(o);
     });
     uniqueSorted(allSlots.map(s => s.club)).forEach(v => {
       const o = document.createElement('option'); o.value = v; o.textContent = v; clubSel.appendChild(o);
@@ -254,7 +249,6 @@
     return allSlots
       .filter(s => dayKey(s.start) === state.day)
       .filter(s => !state.city || s.city === state.city)
-      .filter(s => !state.region || s.region === state.region)
       .filter(s => !state.club || s.club === state.club)
       .filter(s => !state.search || s.club.toLowerCase().includes(state.search.toLowerCase()))
       .sort((a, b) => new Date(a.start) - new Date(b.start));
@@ -286,7 +280,7 @@
         <div class="time">${fmtTime(s.start)}<small>${fmtEndTime(s.start, s.durationMinutes)}</small></div>
         <div class="info">
           <div class="club">${s.club} — ${s.court}</div>
-          <div class="place">${s.city}, ${s.region}</div>
+          <div class="place">${s.city}</div>
         </div>
         <div class="badge">${fmtDuration(s.durationMinutes)}</div>
       `;
@@ -296,13 +290,11 @@
 
   function attachFilterHandlers() {
     document.getElementById('filter-city').addEventListener('change', e => { state.city = e.target.value; render(); });
-    document.getElementById('filter-region').addEventListener('change', e => { state.region = e.target.value; render(); });
     document.getElementById('filter-club').addEventListener('change', e => { state.club = e.target.value; render(); });
     document.getElementById('filter-search').addEventListener('input', e => { state.search = e.target.value; render(); });
     document.getElementById('reset').addEventListener('click', () => {
-      state.city = ''; state.region = ''; state.club = ''; state.search = '';
+      state.city = ''; state.club = ''; state.search = '';
       document.getElementById('filter-city').value = '';
-      document.getElementById('filter-region').value = '';
       document.getElementById('filter-club').value = '';
       document.getElementById('filter-search').value = '';
       render();
