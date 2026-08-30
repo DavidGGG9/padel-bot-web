@@ -1,0 +1,18 @@
+services:
+  padel-bot-web:
+    env_file:
+      - devcontainer.env
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ..:/app/workspace
+      - ~/.config/gcloud/application_default_credentials.json:/secrets/gcloud/application_default_credentials.json
+    networks:
+      - padel-bot-web-network
+    ports:
+      - "3000:3000"
+
+networks:
+  padel-bot-web-network:
+    name: padel-bot-web-network

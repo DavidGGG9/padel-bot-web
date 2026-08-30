@@ -1,0 +1,63 @@
+{
+  "name": "padel-bot-web",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "padel-bot-web",
+  "runServices": [
+    "padel-bot-web"
+  ],
+  "workspaceFolder": "/app/workspace",
+  "shutdownAction": "stopCompose",
+  "overrideCommand": true,
+  "initializeCommand": "bash .devcontainer/pre-install.sh",
+  "postCreateCommand": "bash .devcontainer/post-install.sh",
+    "remoteUser": "david",
+  "updateRemoteUserUID": true,
+   "customizations": {
+        "vscode": {
+            "extensions": [
+                // Python
+                "ms-python.python",
+                "ms-python.mypy-type-checker",
+                "njpwerner.autodocstring",
+                "ms-toolsai.jupyter@2025.7.0",
+                "charliermarsh.ruff",
+                // Yaml
+                "redhat.vscode-yaml",
+                // Toml
+                "tamasfe.even-better-toml",
+                // SQL
+                "adpyke.vscode-sql-formatter",
+                // Docker
+                "ms-azuretools.vscode-docker",
+                // Shell
+                "foxundermoon.shell-format",
+                // Vscode
+                "ms-vsliveshare.vsliveshare", // allows for live coding with others
+                "streetsidesoftware.code-spell-checker", // Spell checker
+                "GitHub.copilot", // AI pair programming
+                "pkief.material-icon-theme", // Icons
+                // Markdown
+                "davidanson.vscode-markdownlint",
+                // Git
+                "eamodio.gitlens",
+                "gitlab.gitlab-workflow",
+                // Data
+                "mechatroner.rainbow-csv",
+                "ms-toolsai.datawrangler"
+            ],
+            "settings": {
+                // Terminal configuration
+                "terminal.integrated.defaultProfile.linux": "zsh",
+                "terminal.integrated.profiles.linux": {
+                    "zsh": {
+                        "path": "/bin/zsh"
+                    }
+                },
+                "cSpell.words": [
+                    "healthcheck"
+                ]
+            }
+        }
+    },
+//   "forwardPorts": [3000, 6274, 6277, 8080, 27017]
+}

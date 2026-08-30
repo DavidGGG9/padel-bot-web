@@ -1,0 +1,12 @@
+{
+  "name": "padel-availability-export",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Scheduled script that exports padel court availabilities from MongoDB to a static JSON file.",
+  "scripts": {
+    "export": "node export.js"
+  },
+  "dependencies": {
+    "mongodb": "^6.9.0"
+  }
+}

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Disponibilités padel</title>
+<style>
+  :root {
+    --bg: #F4F6F5;
+    --surface: #FFFFFF;
+    --ink: #14201E;
+    --muted: #5B6D68;
+    --primary: #0E4B44;
+    --primary-ink: #FFFFFF;
+    --accent: #CFE94A;
+    --accent-ink: #33420A;
+    --border: #DCE3E0;
+    --radius: 10px;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.4;
+  }
+  header {
+    background: var(--primary);
+    color: var(--primary-ink);
+    padding: 20px 16px 24px;
+  }
+  header h1 {
+    margin: 0 0 4px;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+  }
+  header .updated {
+    margin: 0;
+    font-size: 12.5px;
+    color: rgba(255,255,255,0.72);
+  }
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 16px 48px;
+  }
+  .filters {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 12px;
+    margin-top: -16px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .filters input, .filters select {
+    width: 100%;
+    padding: 9px 10px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 14px;
+    color: var(--ink);
+    background: var(--surface);
+  }
+  .filters .search { grid-column: 1 / -1; }
+  .filters .reset {
+    grid-column: 1 / -1;
+    text-align: right;
+    font-size: 13px;
+    color: var(--primary);
+    background: none;
+    border: none;
+    padding: 4px 0 0;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  .day-tabs {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    padding: 16px 0 4px;
+    scrollbar-width: none;
+  }
+  .day-tabs::-webkit-scrollbar { display: none; }
+  .day-tab {
+    flex: 0 0 auto;
+    padding: 8px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--muted);
+    font-size: 13.5px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .day-tab.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: var(--primary-ink);
+  }
+  .summary {
+    font-size: 13px;
+    color: var(--muted);
+    margin: 12px 2px 8px;
+  }
+  .slot {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 12px 14px;
+    margin-bottom: 8px;
+  }
+  .slot .time {
+    flex: 0 0 92px;
+    font-weight: 700;
+    font-size: 14.5px;
+    color: var(--primary);
+  }
+  .slot .time small {
+    display: block;
+    font-weight: 500;
+    color: var(--muted);
+    font-size: 11.5px;
+  }
+  .slot .info { flex: 1; min-width: 0; }
+  .slot .club {
+    font-weight: 600;
+    font-size: 14.5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .slot .place {
+    font-size: 12.5px;
+    color: var(--muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .slot .badge {
+    flex: 0 0 auto;
+    background: var(--accent);
+    color: var(--accent-ink);
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 4px 9px;
+    border-radius: 20px;
+  }
+  .empty {
+    text-align: center;
+    color: var(--muted);
+    font-size: 14px;
+    padding: 40px 12px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Disponibilités padel</h1>
+  <p class="updated" id="updated"></p>
+</header>
+
+<main>
+  <div class="filters">
+    <select id="filter-city"><option value="">Toutes les villes</option></select>
+    <select id="filter-region"><option value="">Toutes les régions</option></select>
+    <select id="filter-club"><option value="">Tous les clubs</option></select>
+    <input class="search" id="filter-search" type="text" placeholder="Rechercher un club...">
+    <button class="reset" id="reset">Réinitialiser les filtres</button>
+  </div>
+
+  <div class="day-tabs" id="day-tabs"></div>
+  <p class="summary" id="summary"></p>
+  <div id="slot-list"></div>
+</main>
+
+<script>
+  const DATA_URL = './availabilities.json';
+  let allSlots = [];
+  let days = [];
+  let state = { city: '', region: '', club: '', search: '', day: null };
+
+  function fmtTime(iso) {
+    const d = new Date(iso);
+    return d.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
+  }
+
+  function fmtEndTime(iso, durationMinutes) {
+    const d = new Date(new Date(iso).getTime() + durationMinutes * 60000);
+    return d.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
+  }
+
+  function fmtDuration(mins) {
+    if (mins % 60 === 0) return (mins / 60) + 'h';
+    const h = Math.floor(mins / 60);
+    const m = mins % 60;
+    return h > 0 ? `${h}h${String(m).padStart(2, '0')}` : `${m} min`;
+  }
+
+  function dayKey(iso) {
+    return new Date(iso).toISOString().slice(0, 10);
+  }
+
+  function fmtDayLabel(key) {
+    const d = new Date(key + 'T12:00:00');
+    const today = new Date();
+    const todayKey = today.toISOString().slice(0, 10);
+    const tomorrow = new Date(today.getTime() + 86400000).toISOString().slice(0, 10);
+    if (key === todayKey) return "Aujourd'hui";
+    if (key === tomorrow) return 'Demain';
+    return d.toLocaleDateString('fr-FR', { weekday: 'short', day: 'numeric', month: 'short' });
+  }
+
+  function uniqueSorted(values) {
+    return [...new Set(values)].sort((a, b) => a.localeCompare(b));
+  }
+
+  function populateFilterOptions() {
+    const citySel = document.getElementById('filter-city');
+    const regionSel = document.getElementById('filter-region');
+    const clubSel = document.getElementById('filter-club');
+    uniqueSorted(allSlots.map(s => s.city)).forEach(v => {
+      const o = document.createElement('option'); o.value = v; o.textContent = v; citySel.appendChild(o);
+    });
+    uniqueSorted(allSlots.map(s => s.region)).forEach(v => {
+      const o = document.createElement('option'); o.value = v; o.textContent = v; regionSel.appendChild(o);
+    });
+    uniqueSorted(allSlots.map(s => s.club)).forEach(v => {
+      const o = document.createElement('option'); o.value = v; o.textContent = v; clubSel.appendChild(o);
+    });
+  }
+
+  function renderDayTabs() {
+    const container = document.getElementById('day-tabs');
+    container.innerHTML = '';
+    days.forEach(key => {
+      const btn = document.createElement('button');
+      btn.className = 'day-tab' + (key === state.day ? ' active' : '');
+      btn.textContent = fmtDayLabel(key);
+      btn.onclick = () => { state.day = key; render(); };
+      container.appendChild(btn);
+    });
+  }
+
+  function filteredSlotsForDay() {
+    return allSlots
+      .filter(s => dayKey(s.start) === state.day)
+      .filter(s => !state.city || s.city === state.city)
+      .filter(s => !state.region || s.region === state.region)
+      .filter(s => !state.club || s.club === state.club)
+      .filter(s => !state.search || s.club.toLowerCase().includes(state.search.toLowerCase()))
+      .sort((a, b) => new Date(a.start) - new Date(b.start));
+  }
+
+  function render() {
+    renderDayTabs();
+    const slots = filteredSlotsForDay();
+    const summary = document.getElementById('summary');
+    summary.textContent = slots.length
+      ? `${slots.length} créneau${slots.length > 1 ? 'x' : ''} disponible${slots.length > 1 ? 's' : ''}`
+      : '';
+
+    const list = document.getElementById('slot-list');
+    list.innerHTML = '';
+
+    if (slots.length === 0) {
+      const empty = document.createElement('div');
+      empty.className = 'empty';
+      empty.textContent = 'Aucune disponibilité ne correspond à vos filtres pour ce jour.';
+      list.appendChild(empty);
+      return;
+    }
+
+    slots.forEach(s => {
+      const row = document.createElement('div');
+      row.className = 'slot';
+      row.innerHTML = `
+        <div class="time">${fmtTime(s.start)}<small>${fmtEndTime(s.start, s.durationMinutes)}</small></div>
+        <div class="info">
+          <div class="club">${s.club} — ${s.court}</div>
+          <div class="place">${s.city}, ${s.region}</div>
+        </div>
+        <div class="badge">${fmtDuration(s.durationMinutes)}</div>
+      `;
+      list.appendChild(row);
+    });
+  }
+
+  function attachFilterHandlers() {
+    document.getElementById('filter-city').addEventListener('change', e => { state.city = e.target.value; render(); });
+    document.getElementById('filter-region').addEventListener('change', e => { state.region = e.target.value; render(); });
+    document.getElementById('filter-club').addEventListener('change', e => { state.club = e.target.value; render(); });
+    document.getElementById('filter-search').addEventListener('input', e => { state.search = e.target.value; render(); });
+    document.getElementById('reset').addEventListener('click', () => {
+      state.city = ''; state.region = ''; state.club = ''; state.search = '';
+      document.getElementById('filter-city').value = '';
+      document.getElementById('filter-region').value = '';
+      document.getElementById('filter-club').value = '';
+      document.getElementById('filter-search').value = '';
+      render();
+    });
+  }
+
+  async function init() {
+    try {
+      const res = await fetch(DATA_URL, { cache: 'no-store' });
+      const data = await res.json();
+      allSlots = data.availabilities || [];
+      days = uniqueSorted(allSlots.map(s => dayKey(s.start)));
+      state.day = days[0] || null;
+
+      document.getElementById('updated').textContent = data.generatedAt
+        ? 'Mis à jour : ' + new Date(data.generatedAt).toLocaleString('fr-FR')
+        : '';
+
+      populateFilterOptions();
+      attachFilterHandlers();
+      render();
+    } catch (err) {
+      document.getElementById('slot-list').innerHTML =
+        '<div class="empty">Impossible de charger les disponibilités (availabilities.json introuvable ou invalide).</div>';
+      console.error(err);
+    }
+  }
+
+  init();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+[project]
+name = "padelbot-web"
+version = "0.1.0"
+description = "WEB UI for padelbot"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
+
+[project.scripts]
+workspace = "workspace:main"
+
+[build-system]
+requires = ["uv_build>=0.12.7,<0.13.0"]
+build-backend = "uv_build"

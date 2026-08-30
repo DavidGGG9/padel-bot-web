@@ -1,0 +1,17 @@
+{
+  "generatedAt": "2026-08-30T06:00:00+04:00",
+  "availabilities": [
+    { "id": "1",  "city": "Saint-Denis", "region": "Nord",  "club": "Padel Club Reunion", "court": "Court 1", "start": "2026-08-30T09:00:00+04:00", "durationMinutes": 90 },
+    { "id": "2",  "city": "Saint-Denis", "region": "Nord",  "club": "Padel Club Reunion", "court": "Court 2", "start": "2026-08-30T10:30:00+04:00", "durationMinutes": 60 },
+    { "id": "3",  "city": "Sainte-Marie","region": "Nord",  "club": "Arena Padel 974",    "court": "Court A", "start": "2026-08-30T18:00:00+04:00", "durationMinutes": 90 },
+    { "id": "4",  "city": "Saint-Paul",  "region": "Ouest", "club": "Ouest Padel Club",   "court": "Court 1", "start": "2026-08-30T17:00:00+04:00", "durationMinutes": 90 },
+    { "id": "5",  "city": "Saint-Paul",  "region": "Ouest", "club": "Ouest Padel Club",   "court": "Court 2", "start": "2026-08-30T19:30:00+04:00", "durationMinutes": 60 },
+    { "id": "6",  "city": "Saint-Pierre","region": "Sud",   "club": "Sud Padel Arena",    "court": "Court 1", "start": "2026-08-31T08:00:00+04:00", "durationMinutes": 90 },
+    { "id": "7",  "city": "Saint-Pierre","region": "Sud",   "club": "Sud Padel Arena",    "court": "Court 2", "start": "2026-08-31T09:30:00+04:00", "durationMinutes": 90 },
+    { "id": "8",  "city": "Saint-Denis", "region": "Nord",  "club": "Padel Club Reunion", "court": "Court 1", "start": "2026-08-31T12:00:00+04:00", "durationMinutes": 60 },
+    { "id": "9",  "city": "Sainte-Marie","region": "Nord",  "club": "Arena Padel 974",    "court": "Court B", "start": "2026-08-31T16:00:00+04:00", "durationMinutes": 90 },
+    { "id": "10", "city": "Saint-Paul",  "region": "Ouest", "club": "Ouest Padel Club",   "court": "Court 1", "start": "2026-09-01T07:30:00+04:00", "durationMinutes": 90 },
+    { "id": "11", "city": "Saint-Pierre","region": "Sud",   "club": "Sud Padel Arena",    "court": "Court 1", "start": "2026-09-01T18:30:00+04:00", "durationMinutes": 60 },
+    { "id": "12", "city": "Saint-Denis", "region": "Nord",  "club": "Padel Club Reunion", "court": "Court 2", "start": "2026-09-01T20:00:00+04:00", "durationMinutes": 90 }
+  ]
+}
