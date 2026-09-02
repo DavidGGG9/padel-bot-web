@@ -1,0 +1,3263 @@
+{
+  "generatedAt": "2026-09-02T19:10:20.906017+00:00",
+  "availabilities": [
+    {
+      "id": "6a948051e699259fe97b64c6",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "PORSCHE",
+      "start": "2026-09-02T06:00:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a948051e699259fe97b64f1",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "SFR",
+      "start": "2026-09-02T06:00:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a948061d284ec6712226263",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "RPC",
+      "court": "Terrain ODB",
+      "start": "2026-09-02T06:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948051e699259fe97b64ba",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "Pneus Cash",
+      "start": "2026-09-02T06:00:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a948061d284ec6712226268",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "RPC",
+      "court": "Terrain PORSCHE",
+      "start": "2026-09-02T06:00:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a948061d284ec6712226265",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "RPC",
+      "court": "Terrain Pneus Cash",
+      "start": "2026-09-02T06:00:00",
+      "durationMinutes": 420
+    },
+    {
+      "id": "6a948061d284ec6712226266",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "RPC",
+      "court": "Terrain www.piecesenstock.re",
+      "start": "2026-09-02T06:00:00",
+      "durationMinutes": 360
+    },
+    {
+      "id": "6a948051e699259fe97b64c9",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "PORSCHE",
+      "start": "2026-09-02T06:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a948051e699259fe97b64cc",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "PORSCHE",
+      "start": "2026-09-02T07:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a94804f0dcad8e4811f201e",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-02T07:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948055e699259fe97b64f7",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "TCD",
+      "court": "PADEL 1",
+      "start": "2026-09-02T07:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948055e699259fe97b64fa",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "TCD",
+      "court": "AUTO SUD+",
+      "start": "2026-09-02T07:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a948051e699259fe97b64d2",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "PORSCHE",
+      "start": "2026-09-02T07:30:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a948055e699259fe97b64f8",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "TCD",
+      "court": "PADEL 3",
+      "start": "2026-09-02T07:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a948055e699259fe97b64f9",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "TCD",
+      "court": "SIOUX",
+      "start": "2026-09-02T07:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a948051e699259fe97b64bc",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "Pneus Cash",
+      "start": "2026-09-02T08:00:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a948061d284ec6712226269",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "RPC",
+      "court": "Terrain PORSCHE",
+      "start": "2026-09-02T08:00:00",
+      "durationMinutes": 240
+    },
+    {
+      "id": "6a948059e699259fe97b64ff",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 2 - PORSCHE",
+      "start": "2026-09-02T08:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a94804f0dcad8e4811f201f",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-02T08:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948059e699259fe97b6514",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-02T08:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948051e699259fe97b64d6",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "PORSCHE",
+      "start": "2026-09-02T08:00:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a948051e699259fe97b64da",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "PORSCHE",
+      "start": "2026-09-02T08:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a948059e699259fe97b6517",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-02T08:30:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948059e699259fe97b6502",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 2 - PORSCHE",
+      "start": "2026-09-02T08:30:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948051e699259fe97b64bd",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "Pneus Cash",
+      "start": "2026-09-02T08:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a948059e699259fe97b6504",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 2 - PORSCHE",
+      "start": "2026-09-02T09:00:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a948059e699259fe97b6518",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-02T09:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a94804f0dcad8e4811f2020",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-02T09:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948051e699259fe97b64df",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "PORSCHE",
+      "start": "2026-09-02T09:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948061d284ec6712226264",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "RPC",
+      "court": "Terrain ODB",
+      "start": "2026-09-02T09:00:00",
+      "durationMinutes": 240
+    },
+    {
+      "id": "6a94804f0dcad8e4811f2015",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT CORSAIR",
+      "start": "2026-09-02T09:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948059e699259fe97b6507",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 2 - PORSCHE",
+      "start": "2026-09-02T09:30:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a948059e699259fe97b651b",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-02T09:30:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948051e699259fe97b64e3",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "PORSCHE",
+      "start": "2026-09-02T09:30:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a948051e699259fe97b64e5",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "PORSCHE",
+      "start": "2026-09-02T10:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948059e699259fe97b650a",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 2 - PORSCHE",
+      "start": "2026-09-02T10:00:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a94804f0dcad8e4811f2016",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT CORSAIR",
+      "start": "2026-09-02T10:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a94804f0dcad8e4811f2021",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-02T10:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948059e699259fe97b651e",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-02T10:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948051e699259fe97b64f2",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "SFR",
+      "start": "2026-09-02T10:00:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a948059e699259fe97b6522",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-02T10:30:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a948059e699259fe97b650d",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 2 - PORSCHE",
+      "start": "2026-09-02T10:30:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a948051e699259fe97b64f4",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "SFR",
+      "start": "2026-09-02T10:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a948051e699259fe97b64e6",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "PORSCHE",
+      "start": "2026-09-02T10:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a948059e699259fe97b650f",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 2 - PORSCHE",
+      "start": "2026-09-02T11:00:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a94804f0dcad8e4811f2017",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT CORSAIR",
+      "start": "2026-09-02T11:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a94804f0dcad8e4811f2022",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-02T11:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948059e699259fe97b6526",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-02T11:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948059e699259fe97b6529",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-02T11:30:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948059e699259fe97b6511",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 2 - PORSCHE",
+      "start": "2026-09-02T11:30:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948059e699259fe97b652c",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-02T12:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a94804f0dcad8e4811f2023",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-02T12:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948051e699259fe97b64be",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "Pneus Cash",
+      "start": "2026-09-02T12:00:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a94804f0dcad8e4811f2018",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT CORSAIR",
+      "start": "2026-09-02T12:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948051e699259fe97b64c0",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "Pneus Cash",
+      "start": "2026-09-02T12:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a948059e699259fe97b652e",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-02T12:30:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948059e699259fe97b652f",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-02T13:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a94804f0dcad8e4811f2019",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT CORSAIR",
+      "start": "2026-09-02T13:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a94804f0dcad8e4811f2024",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-02T13:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948051e699259fe97b64e9",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "PORSCHE",
+      "start": "2026-09-02T13:30:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948061d284ec6712226267",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "RPC",
+      "court": "Terrain www.piecesenstock.re",
+      "start": "2026-09-02T13:30:00",
+      "durationMinutes": 150
+    },
+    {
+      "id": "6a948061d284ec671222626a",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "RPC",
+      "court": "Terrain PORSCHE",
+      "start": "2026-09-02T13:30:00",
+      "durationMinutes": 150
+    },
+    {
+      "id": "6a94804f0dcad8e4811f201a",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT CORSAIR",
+      "start": "2026-09-02T14:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a94804f0dcad8e4811f2025",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-02T14:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948051e699259fe97b64eb",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "PORSCHE",
+      "start": "2026-09-02T14:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948051e699259fe97b64c2",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "PORSCHE",
+      "start": "2026-09-02T14:30:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948051e699259fe97b64f0",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "PORSCHE",
+      "start": "2026-09-02T15:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948059e699259fe97b6530",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-02T15:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a94804f0dcad8e4811f201b",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT CORSAIR",
+      "start": "2026-09-02T15:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a94804f0dcad8e4811f2026",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-02T15:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948051e699259fe97b64d8",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "PORSCHE",
+      "start": "2026-09-02T15:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a94804f0dcad8e4811f2027",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-02T16:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948059e699259fe97b6531",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-02T16:00:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a94804f0dcad8e4811f201c",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT CORSAIR",
+      "start": "2026-09-02T16:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a94804f0dcad8e4811f2028",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-02T21:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a94804f0dcad8e4811f201d",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT CORSAIR",
+      "start": "2026-09-02T21:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948069e699259fe97b657c",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "RPC",
+      "court": "Terrain ODB",
+      "start": "2026-09-03T06:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948069e699259fe97b6583",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "RPC",
+      "court": "Terrain PORSCHE",
+      "start": "2026-09-03T06:00:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a948069e699259fe97b657e",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "RPC",
+      "court": "Terrain Pneus Cash",
+      "start": "2026-09-03T06:00:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a948069e699259fe97b6581",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "RPC",
+      "court": "Terrain www.piecesenstock.re",
+      "start": "2026-09-03T06:00:00",
+      "durationMinutes": 450
+    },
+    {
+      "id": "6a94805a0dcad8e4811f204e",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "SFR",
+      "start": "2026-09-03T06:00:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a94805a0dcad8e4811f2043",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "Pneus Cash",
+      "start": "2026-09-03T06:00:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a94805a0dcad8e4811f2045",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "PORSCHE",
+      "start": "2026-09-03T06:00:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a94805a0dcad8e4811f204a",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "PORSCHE",
+      "start": "2026-09-03T06:30:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a94805a0dcad8e4811f204b",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "PORSCHE",
+      "start": "2026-09-03T07:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a9480530dcad8e4811f202b",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT CORSAIR",
+      "start": "2026-09-03T07:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a9480530dcad8e4811f2036",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-03T07:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a94805c46308f030022b209",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "TCD",
+      "court": "PADEL 1",
+      "start": "2026-09-03T07:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a94805c46308f030022b20b",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "TCD",
+      "court": "SIOUX",
+      "start": "2026-09-03T07:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a94805a0dcad8e4811f204d",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "PORSCHE",
+      "start": "2026-09-03T07:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a94805c46308f030022b20c",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "TCD",
+      "court": "AUTO SUD+",
+      "start": "2026-09-03T07:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a94805c46308f030022b20a",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "TCD",
+      "court": "PADEL 3",
+      "start": "2026-09-03T07:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a94805de699259fe97b653a",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-03T08:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948069e699259fe97b6584",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "RPC",
+      "court": "Terrain PORSCHE",
+      "start": "2026-09-03T08:00:00",
+      "durationMinutes": 240
+    },
+    {
+      "id": "6a94805de699259fe97b6534",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 2 - PORSCHE",
+      "start": "2026-09-03T08:00:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a948069e699259fe97b657f",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "RPC",
+      "court": "Terrain Pneus Cash",
+      "start": "2026-09-03T08:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a9480530dcad8e4811f202c",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT CORSAIR",
+      "start": "2026-09-03T08:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a9480530dcad8e4811f2037",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-03T08:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a94805de699259fe97b653f",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-03T08:30:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a94805de699259fe97b6536",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 2 - PORSCHE",
+      "start": "2026-09-03T08:30:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948069e699259fe97b657d",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "RPC",
+      "court": "Terrain ODB",
+      "start": "2026-09-03T09:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a9480530dcad8e4811f2038",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-03T09:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a94805de699259fe97b6542",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-03T09:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a9480530dcad8e4811f202d",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT CORSAIR",
+      "start": "2026-09-03T09:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a94805de699259fe97b6544",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-03T09:30:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a94805de699259fe97b6548",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-03T10:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a9480530dcad8e4811f202e",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT CORSAIR",
+      "start": "2026-09-03T10:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a9480530dcad8e4811f2039",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-03T10:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a94805de699259fe97b6549",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-03T10:30:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a94805de699259fe97b6538",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 2 - PORSCHE",
+      "start": "2026-09-03T10:30:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a94805de699259fe97b6539",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 2 - PORSCHE",
+      "start": "2026-09-03T11:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a9480530dcad8e4811f203a",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-03T11:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a94805de699259fe97b654c",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-03T11:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a9480530dcad8e4811f202f",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT CORSAIR",
+      "start": "2026-09-03T11:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a94805de699259fe97b6551",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-03T11:30:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a9480530dcad8e4811f2030",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT CORSAIR",
+      "start": "2026-09-03T12:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a94805de699259fe97b6553",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-03T12:00:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a948069e699259fe97b6580",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "RPC",
+      "court": "Terrain Pneus Cash",
+      "start": "2026-09-03T12:00:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a9480530dcad8e4811f203b",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-03T12:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a94805de699259fe97b6557",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-03T12:30:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a9480530dcad8e4811f2031",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT CORSAIR",
+      "start": "2026-09-03T13:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a9480530dcad8e4811f203c",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-03T13:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a94805de699259fe97b6558",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-03T13:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948069e699259fe97b6585",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "RPC",
+      "court": "Terrain PORSCHE",
+      "start": "2026-09-03T13:30:00",
+      "durationMinutes": 240
+    },
+    {
+      "id": "6a94805de699259fe97b655d",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-03T13:30:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a9480530dcad8e4811f2032",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT CORSAIR",
+      "start": "2026-09-03T14:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a94805de699259fe97b655f",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-03T14:00:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a9480530dcad8e4811f203d",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-03T14:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a94805de699259fe97b6561",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-03T14:30:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a9480530dcad8e4811f203e",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-03T15:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a94805de699259fe97b6563",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-03T15:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a9480530dcad8e4811f2033",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT CORSAIR",
+      "start": "2026-09-03T15:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948069e699259fe97b6582",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "RPC",
+      "court": "Terrain www.piecesenstock.re",
+      "start": "2026-09-03T15:30:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a94805de699259fe97b6564",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-03T16:00:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a9480530dcad8e4811f203f",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-03T16:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a9480530dcad8e4811f2034",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT CORSAIR",
+      "start": "2026-09-03T16:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a94805de699259fe97b6565",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-03T20:30:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a9480530dcad8e4811f2040",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-03T21:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a9480530dcad8e4811f2035",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT CORSAIR",
+      "start": "2026-09-03T21:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948072f3e42ddfeec42c7d",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "RPC",
+      "court": "Terrain Pneus Cash",
+      "start": "2026-09-04T06:00:00",
+      "durationMinutes": 180
+    },
+    {
+      "id": "6a948072f3e42ddfeec42c81",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "RPC",
+      "court": "Terrain PORSCHE",
+      "start": "2026-09-04T06:00:00",
+      "durationMinutes": 720
+    },
+    {
+      "id": "6a94805f0dcad8e4811f20a6",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "SFR",
+      "start": "2026-09-04T06:00:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a94805f0dcad8e4811f2053",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "Pneus Cash",
+      "start": "2026-09-04T06:00:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a948072f3e42ddfeec42c7a",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "RPC",
+      "court": "Terrain ODB",
+      "start": "2026-09-04T06:00:00",
+      "durationMinutes": 180
+    },
+    {
+      "id": "6a94805f0dcad8e4811f207e",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "PORSCHE",
+      "start": "2026-09-04T06:00:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a948072f3e42ddfeec42c80",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "RPC",
+      "court": "Terrain www.piecesenstock.re",
+      "start": "2026-09-04T06:00:00",
+      "durationMinutes": 720
+    },
+    {
+      "id": "6a94805f0dcad8e4811f2082",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "PORSCHE",
+      "start": "2026-09-04T06:30:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a94805f0dcad8e4811f2056",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "Pneus Cash",
+      "start": "2026-09-04T06:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a94805f0dcad8e4811f205a",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "Pneus Cash",
+      "start": "2026-09-04T07:00:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a948062f3e42ddfeec42c58",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "TCD",
+      "court": "PADEL 1",
+      "start": "2026-09-04T07:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948059d284ec6712226256",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-04T07:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a94805f0dcad8e4811f2084",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "PORSCHE",
+      "start": "2026-09-04T07:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948062f3e42ddfeec42c5a",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "TCD",
+      "court": "SIOUX",
+      "start": "2026-09-04T07:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a94805f0dcad8e4811f208a",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "PORSCHE",
+      "start": "2026-09-04T07:30:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a94805f0dcad8e4811f205e",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "Pneus Cash",
+      "start": "2026-09-04T07:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a948062f3e42ddfeec42c5b",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "TCD",
+      "court": "AUTO SUD+",
+      "start": "2026-09-04T07:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a948062f3e42ddfeec42c59",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "TCD",
+      "court": "PADEL 3",
+      "start": "2026-09-04T07:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a94805f0dcad8e4811f208c",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "PORSCHE",
+      "start": "2026-09-04T08:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a94806146308f030022b216",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-04T08:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a94805f0dcad8e4811f2062",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "Pneus Cash",
+      "start": "2026-09-04T08:00:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a94805f0dcad8e4811f20a9",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "SFR",
+      "start": "2026-09-04T08:00:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a94805f0dcad8e4811f2068",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "Pneus Cash",
+      "start": "2026-09-04T08:30:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a94805f0dcad8e4811f20ac",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "SFR",
+      "start": "2026-09-04T08:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a94805f0dcad8e4811f2093",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "PORSCHE",
+      "start": "2026-09-04T08:30:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a94805f0dcad8e4811f20b2",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "SFR",
+      "start": "2026-09-04T09:00:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a94805f0dcad8e4811f2094",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "PORSCHE",
+      "start": "2026-09-04T09:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a94805f0dcad8e4811f206a",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "Pneus Cash",
+      "start": "2026-09-04T09:00:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a948059d284ec6712226257",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-04T09:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a94805f0dcad8e4811f20b6",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "SFR",
+      "start": "2026-09-04T09:30:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a94805f0dcad8e4811f206e",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "Pneus Cash",
+      "start": "2026-09-04T09:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a94805f0dcad8e4811f209b",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "PORSCHE",
+      "start": "2026-09-04T09:30:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a94806146308f030022b219",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-04T10:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a94805f0dcad8e4811f20b7",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "SFR",
+      "start": "2026-09-04T10:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a94805f0dcad8e4811f209f",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "PORSCHE",
+      "start": "2026-09-04T10:00:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a948072f3e42ddfeec42c7e",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "RPC",
+      "court": "Terrain Pneus Cash",
+      "start": "2026-09-04T10:00:00",
+      "durationMinutes": 210
+    },
+    {
+      "id": "6a948059d284ec671222624e",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT CORSAIR",
+      "start": "2026-09-04T10:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a94805f0dcad8e4811f2072",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "Pneus Cash",
+      "start": "2026-09-04T10:00:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a948059d284ec6712226258",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-04T10:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a94806146308f030022b21a",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-04T10:30:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a94805f0dcad8e4811f2075",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "Pneus Cash",
+      "start": "2026-09-04T10:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a94806146308f030022b211",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 2 - PORSCHE",
+      "start": "2026-09-04T10:30:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a94805f0dcad8e4811f20bb",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "SFR",
+      "start": "2026-09-04T10:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a94805f0dcad8e4811f20a0",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "PORSCHE",
+      "start": "2026-09-04T10:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a948059d284ec671222624f",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT CORSAIR",
+      "start": "2026-09-04T11:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a94805f0dcad8e4811f2078",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "Pneus Cash",
+      "start": "2026-09-04T11:00:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a94805f0dcad8e4811f20a3",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "PORSCHE",
+      "start": "2026-09-04T11:00:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a948059d284ec6712226259",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-04T11:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a94806146308f030022b212",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 2 - PORSCHE",
+      "start": "2026-09-04T11:00:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a94806146308f030022b21d",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-04T11:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a94805f0dcad8e4811f20bf",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "SFR",
+      "start": "2026-09-04T11:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a94806146308f030022b220",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-04T11:30:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a94805f0dcad8e4811f20a5",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "PORSCHE",
+      "start": "2026-09-04T11:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a94805f0dcad8e4811f20c0",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "SFR",
+      "start": "2026-09-04T11:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a94806146308f030022b214",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 2 - PORSCHE",
+      "start": "2026-09-04T11:30:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a94805f0dcad8e4811f207a",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "Pneus Cash",
+      "start": "2026-09-04T11:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a948059d284ec6712226250",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT CORSAIR",
+      "start": "2026-09-04T12:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948059d284ec671222625a",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-04T12:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a94806146308f030022b223",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-04T12:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a94806146308f030022b228",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-04T12:30:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948059d284ec671222625b",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-04T13:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a94806146308f030022b22b",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-04T13:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948059d284ec6712226251",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT CORSAIR",
+      "start": "2026-09-04T13:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a94806146308f030022b22c",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-04T13:30:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a94805f0dcad8e4811f207b",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "Pneus Cash",
+      "start": "2026-09-04T13:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a948072f3e42ddfeec42c7b",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "RPC",
+      "court": "Terrain ODB",
+      "start": "2026-09-04T13:30:00",
+      "durationMinutes": 150
+    },
+    {
+      "id": "6a94805f0dcad8e4811f20c1",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "SFR",
+      "start": "2026-09-04T13:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a94806146308f030022b231",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-04T14:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948059d284ec6712226252",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT CORSAIR",
+      "start": "2026-09-04T14:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948059d284ec671222625c",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-04T14:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a94806146308f030022b232",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-04T14:30:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a948072f3e42ddfeec42c7f",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "RPC",
+      "court": "Terrain Pneus Cash",
+      "start": "2026-09-04T14:30:00",
+      "durationMinutes": 210
+    },
+    {
+      "id": "6a948059d284ec6712226253",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT CORSAIR",
+      "start": "2026-09-04T15:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a94806146308f030022b234",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-04T15:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948059d284ec671222625d",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-04T15:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948059d284ec6712226254",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT CORSAIR",
+      "start": "2026-09-04T16:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a94806146308f030022b235",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-04T16:00:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a948059d284ec671222625e",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-04T16:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948072f3e42ddfeec42c7c",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "RPC",
+      "court": "Terrain ODB",
+      "start": "2026-09-04T17:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a948059d284ec671222625f",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-04T20:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a94806146308f030022b215",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 2 - PORSCHE",
+      "start": "2026-09-04T20:30:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a948059d284ec6712226260",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-04T21:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948059d284ec6712226255",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT CORSAIR",
+      "start": "2026-09-04T21:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a9480ded284ec671222636f",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "RPC",
+      "court": "Terrain www.piecesenstock.re",
+      "start": "2026-09-05T06:00:00",
+      "durationMinutes": 660
+    },
+    {
+      "id": "6a9480ded284ec671222636c",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "RPC",
+      "court": "Terrain Pneus Cash",
+      "start": "2026-09-05T06:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a9480ded284ec6712226371",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "RPC",
+      "court": "Terrain PORSCHE",
+      "start": "2026-09-05T06:00:00",
+      "durationMinutes": 150
+    },
+    {
+      "id": "6a9480ded284ec6712226369",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "RPC",
+      "court": "Terrain ODB",
+      "start": "2026-09-05T06:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948063d284ec671222626f",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "Pneus Cash",
+      "start": "2026-09-05T06:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948063d284ec6712226273",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "PORSCHE",
+      "start": "2026-09-05T06:00:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a948063d284ec6712226276",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "PORSCHE",
+      "start": "2026-09-05T06:30:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a948063d284ec6712226270",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "Pneus Cash",
+      "start": "2026-09-05T06:30:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a94805df3e42ddfeec42c4e",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-05T07:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948067d284ec671222627b",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "TCD",
+      "court": "PADEL 1",
+      "start": "2026-09-05T07:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a94805df3e42ddfeec42c47",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT CORSAIR",
+      "start": "2026-09-05T07:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948063d284ec6712226272",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "Pneus Cash",
+      "start": "2026-09-05T07:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948063d284ec6712226278",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "PORSCHE",
+      "start": "2026-09-05T07:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948067d284ec671222627e",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "TCD",
+      "court": "AUTO SUD+",
+      "start": "2026-09-05T07:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a948067d284ec671222627d",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "TCD",
+      "court": "SIOUX",
+      "start": "2026-09-05T07:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a948067d284ec671222627c",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "TCD",
+      "court": "PADEL 3",
+      "start": "2026-09-05T07:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a948066f3e42ddfeec42c6d",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-05T08:00:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a948066f3e42ddfeec42c5e",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 2 - PORSCHE",
+      "start": "2026-09-05T08:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948066f3e42ddfeec42c6f",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-05T08:30:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a948066f3e42ddfeec42c62",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 2 - PORSCHE",
+      "start": "2026-09-05T08:30:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a948066f3e42ddfeec42c70",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-05T09:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948066f3e42ddfeec42c63",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 2 - PORSCHE",
+      "start": "2026-09-05T09:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a9480ded284ec6712226372",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "RPC",
+      "court": "Terrain PORSCHE",
+      "start": "2026-09-05T10:00:00",
+      "durationMinutes": 330
+    },
+    {
+      "id": "6a94805df3e42ddfeec42c4f",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-05T10:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a94805df3e42ddfeec42c50",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-05T11:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948066f3e42ddfeec42c66",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 2 - PORSCHE",
+      "start": "2026-09-05T12:00:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a9480ded284ec671222636d",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "RPC",
+      "court": "Terrain Pneus Cash",
+      "start": "2026-09-05T12:00:00",
+      "durationMinutes": 300
+    },
+    {
+      "id": "6a94805df3e42ddfeec42c48",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT CORSAIR",
+      "start": "2026-09-05T12:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a94805df3e42ddfeec42c51",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-05T12:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948066f3e42ddfeec42c72",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-05T12:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948066f3e42ddfeec42c75",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-05T12:30:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a948066f3e42ddfeec42c67",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 2 - PORSCHE",
+      "start": "2026-09-05T12:30:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a9480ded284ec671222636a",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "RPC",
+      "court": "Terrain ODB",
+      "start": "2026-09-05T12:30:00",
+      "durationMinutes": 330
+    },
+    {
+      "id": "6a94805df3e42ddfeec42c49",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT CORSAIR",
+      "start": "2026-09-05T13:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948066f3e42ddfeec42c69",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 2 - PORSCHE",
+      "start": "2026-09-05T13:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948066f3e42ddfeec42c76",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-05T13:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a94805df3e42ddfeec42c52",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-05T13:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a94805df3e42ddfeec42c4a",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT CORSAIR",
+      "start": "2026-09-05T14:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a94805df3e42ddfeec42c53",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-05T14:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948066f3e42ddfeec42c77",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 3 - CAPRICE",
+      "start": "2026-09-05T16:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a94805df3e42ddfeec42c4b",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT CORSAIR",
+      "start": "2026-09-05T19:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948066f3e42ddfeec42c6a",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "Oasis",
+      "court": "Padel 2 - PORSCHE",
+      "start": "2026-09-05T19:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a9480ded284ec671222636b",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "RPC",
+      "court": "Terrain ODB",
+      "start": "2026-09-05T19:30:00",
+      "durationMinutes": 150
+    },
+    {
+      "id": "6a9480ded284ec6712226370",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "RPC",
+      "court": "Terrain www.piecesenstock.re",
+      "start": "2026-09-05T20:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a9480ded284ec671222636e",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "RPC",
+      "court": "Terrain Pneus Cash",
+      "start": "2026-09-05T20:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a94805df3e42ddfeec42c54",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-05T20:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a94805df3e42ddfeec42c4c",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT CORSAIR",
+      "start": "2026-09-05T20:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a9480ded284ec6712226373",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "RPC",
+      "court": "Terrain PORSCHE",
+      "start": "2026-09-05T20:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a94805df3e42ddfeec42c4d",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT CORSAIR",
+      "start": "2026-09-05T21:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a94805df3e42ddfeec42c55",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-05T21:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948180e699259fe97b6602",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "CHICKEN STREET",
+      "start": "2026-09-06T06:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a9480670dcad8e4811f20c4",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "Pneus Cash",
+      "start": "2026-09-06T06:00:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a948180e699259fe97b65fd",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "COFFEE CLUB",
+      "start": "2026-09-06T06:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a9480670dcad8e4811f20ca",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "PORSCHE",
+      "start": "2026-09-06T06:00:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a948180e699259fe97b65e5",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "Ench\u00e8res Grand Prado",
+      "start": "2026-09-06T06:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948180e699259fe97b65dc",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "Finopia",
+      "start": "2026-09-06T06:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948180e699259fe97b65b9",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "MULTIAUTO",
+      "start": "2026-09-06T06:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948180e699259fe97b65c2",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "F.TO.I.",
+      "start": "2026-09-06T06:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948180e699259fe97b65d3",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "Body Minute",
+      "start": "2026-09-06T06:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a9480bde699259fe97b658f",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "RPC",
+      "court": "Terrain ODB",
+      "start": "2026-09-06T06:00:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a9480bde699259fe97b6595",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "RPC",
+      "court": "Terrain PORSCHE",
+      "start": "2026-09-06T06:00:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a9480bde699259fe97b6591",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "RPC",
+      "court": "Terrain Pneus Cash",
+      "start": "2026-09-06T06:00:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a9480bde699259fe97b6593",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "RPC",
+      "court": "Terrain www.piecesenstock.re",
+      "start": "2026-09-06T06:00:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a9480670dcad8e4811f20c7",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "Pneus Cash",
+      "start": "2026-09-06T06:30:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a948180e699259fe97b65ef",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "MULTIAUTO",
+      "start": "2026-09-06T06:30:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a948180e699259fe97b659f",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "Body Minute",
+      "start": "2026-09-06T06:30:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a948180e699259fe97b65b1",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "Ench\u00e8res Grand Prado",
+      "start": "2026-09-06T06:30:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a948180e699259fe97b65f8",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "F.TO.I.",
+      "start": "2026-09-06T06:30:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a9480670dcad8e4811f20cd",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "PORSCHE",
+      "start": "2026-09-06T06:30:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a948180e699259fe97b65fe",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "COFFEE CLUB",
+      "start": "2026-09-06T06:30:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a948180e699259fe97b65dd",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "Finopia",
+      "start": "2026-09-06T06:30:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a948180e699259fe97b65ce",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "CHICKEN STREET",
+      "start": "2026-09-06T06:30:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a948180e699259fe97b65c4",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "F.TO.I.",
+      "start": "2026-09-06T07:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948180e699259fe97b65de",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "Finopia",
+      "start": "2026-09-06T07:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948180e699259fe97b65d5",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "Body Minute",
+      "start": "2026-09-06T07:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a9480670dcad8e4811f20c9",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "Pneus Cash",
+      "start": "2026-09-06T07:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948180e699259fe97b65f0",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "MULTIAUTO",
+      "start": "2026-09-06T07:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948180e699259fe97b65cf",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "CHICKEN STREET",
+      "start": "2026-09-06T07:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948180e699259fe97b65e7",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "Ench\u00e8res Grand Prado",
+      "start": "2026-09-06T07:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a9480670dcad8e4811f20cf",
+      "region": "Ouest",
+      "city": "La Possession",
+      "club": "Kaz \u00e0 Padel",
+      "court": "PORSCHE",
+      "start": "2026-09-06T07:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948061e699259fe97b6568",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT CORSAIR",
+      "start": "2026-09-06T07:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a94806de699259fe97b6588",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "TCD",
+      "court": "PADEL 1",
+      "start": "2026-09-06T07:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948180e699259fe97b65ca",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "COFFEE CLUB",
+      "start": "2026-09-06T07:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948061e699259fe97b6571",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-06T07:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a94806de699259fe97b658a",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "TCD",
+      "court": "SIOUX",
+      "start": "2026-09-06T07:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a94806de699259fe97b658b",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "TCD",
+      "court": "AUTO SUD+",
+      "start": "2026-09-06T07:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a94806de699259fe97b6589",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "TCD",
+      "court": "PADEL 3",
+      "start": "2026-09-06T07:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a948180e699259fe97b65aa",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "Finopia",
+      "start": "2026-09-06T07:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a948180e699259fe97b65f1",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "MULTIAUTO",
+      "start": "2026-09-06T07:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a948180e699259fe97b6600",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "COFFEE CLUB",
+      "start": "2026-09-06T07:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a948180e699259fe97b65a1",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "Body Minute",
+      "start": "2026-09-06T07:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a948180e699259fe97b65d0",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "CHICKEN STREET",
+      "start": "2026-09-06T07:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a948180e699259fe97b65b3",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "Ench\u00e8res Grand Prado",
+      "start": "2026-09-06T07:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a948180e699259fe97b65c5",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "F.TO.I.",
+      "start": "2026-09-06T07:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a948061e699259fe97b6572",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-06T10:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948061e699259fe97b6569",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT CORSAIR",
+      "start": "2026-09-06T10:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948061e699259fe97b656a",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT CORSAIR",
+      "start": "2026-09-06T11:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948061e699259fe97b6573",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-06T11:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948061e699259fe97b656b",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT CORSAIR",
+      "start": "2026-09-06T12:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948061e699259fe97b6574",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-06T12:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948061e699259fe97b656c",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT CORSAIR",
+      "start": "2026-09-06T13:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948061e699259fe97b6575",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-06T13:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948061e699259fe97b656d",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT CORSAIR",
+      "start": "2026-09-06T14:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948061e699259fe97b6576",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-06T14:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948061e699259fe97b656e",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT CORSAIR",
+      "start": "2026-09-06T15:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948061e699259fe97b6577",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-06T15:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a9480bde699259fe97b6596",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "RPC",
+      "court": "Terrain PORSCHE",
+      "start": "2026-09-06T16:00:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a9480bde699259fe97b6594",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "RPC",
+      "court": "Terrain www.piecesenstock.re",
+      "start": "2026-09-06T18:00:00",
+      "durationMinutes": 240
+    },
+    {
+      "id": "6a9480bde699259fe97b6597",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "RPC",
+      "court": "Terrain PORSCHE",
+      "start": "2026-09-06T19:00:00",
+      "durationMinutes": 180
+    },
+    {
+      "id": "6a948180e699259fe97b65f2",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "MULTIAUTO",
+      "start": "2026-09-06T19:30:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948180e699259fe97b65b4",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "Ench\u00e8res Grand Prado",
+      "start": "2026-09-06T19:30:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948180e699259fe97b65ab",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "Finopia",
+      "start": "2026-09-06T19:30:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948180e699259fe97b65d7",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "Body Minute",
+      "start": "2026-09-06T19:30:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948061e699259fe97b6578",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-06T20:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a9480bde699259fe97b6592",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "RPC",
+      "court": "Terrain Pneus Cash",
+      "start": "2026-09-06T20:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948180e699259fe97b65e1",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "Finopia",
+      "start": "2026-09-06T20:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948061e699259fe97b656f",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT CORSAIR",
+      "start": "2026-09-06T20:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948180e699259fe97b65d8",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "Body Minute",
+      "start": "2026-09-06T20:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a9480bde699259fe97b6590",
+      "region": "Ouest",
+      "city": "Saint-Paul",
+      "club": "RPC",
+      "court": "Terrain ODB",
+      "start": "2026-09-06T20:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948180e699259fe97b65ea",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "Ench\u00e8res Grand Prado",
+      "start": "2026-09-06T20:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948180e699259fe97b65f3",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "MULTIAUTO",
+      "start": "2026-09-06T20:00:00",
+      "durationMinutes": 120
+    },
+    {
+      "id": "6a948180e699259fe97b65a4",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "Body Minute",
+      "start": "2026-09-06T20:30:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a948180e699259fe97b65f4",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "MULTIAUTO",
+      "start": "2026-09-06T20:30:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a948180e699259fe97b65eb",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "Ench\u00e8res Grand Prado",
+      "start": "2026-09-06T20:30:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a948180e699259fe97b65ad",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "Finopia",
+      "start": "2026-09-06T20:30:00",
+      "durationMinutes": 90
+    },
+    {
+      "id": "6a948061e699259fe97b6570",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT CORSAIR",
+      "start": "2026-09-06T21:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948180e699259fe97b65ec",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "Ench\u00e8res Grand Prado",
+      "start": "2026-09-06T21:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948061e699259fe97b6579",
+      "region": "Ouest",
+      "city": "Saint-Gilles",
+      "club": "Sain-Gym",
+      "court": "COURT PORSCHE",
+      "start": "2026-09-06T21:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948180e699259fe97b65fb",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "F.TO.I.",
+      "start": "2026-09-06T21:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948180e699259fe97b65da",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "Body Minute",
+      "start": "2026-09-06T21:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948180e699259fe97b6606",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "CHICKEN STREET",
+      "start": "2026-09-06T21:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948180e699259fe97b65e3",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "Finopia",
+      "start": "2026-09-06T21:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948180e699259fe97b65c0",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "MULTIAUTO",
+      "start": "2026-09-06T21:00:00",
+      "durationMinutes": 60
+    },
+    {
+      "id": "6a948180e699259fe97b65c7",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "F.TO.I.",
+      "start": "2026-09-06T21:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a948180e699259fe97b65af",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "Finopia",
+      "start": "2026-09-06T21:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a948180e699259fe97b65b8",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "Ench\u00e8res Grand Prado",
+      "start": "2026-09-06T21:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a948180e699259fe97b65c1",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "MULTIAUTO",
+      "start": "2026-09-06T21:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a948180e699259fe97b65cc",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "COFFEE CLUB",
+      "start": "2026-09-06T21:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a948180e699259fe97b65d2",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "CHICKEN STREET",
+      "start": "2026-09-06T21:30:00",
+      "durationMinutes": 30
+    },
+    {
+      "id": "6a948180e699259fe97b65a6",
+      "region": "Nord",
+      "city": "Saint-Denis",
+      "club": "Champ-Fleuri",
+      "court": "Body Minute",
+      "start": "2026-09-06T21:30:00",
+      "durationMinutes": 30
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+name: Refresh and deploy Pages
+
+on:
+  push:
+    branches: [develop]
+    paths-ignore:
+      - 'docs/availabilities.json'
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch: {}
+
+# Needed to publish to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Avoid two deploys racing each other
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Setup uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Install dependencies
+        run: uv sync --frozen
+
+      - name: Refresh availabilities JSON
+        env:
+          OUTPUT_PATH: docs/availabilities.json
+          MDB_USER: ${{ secrets.MDB_USER }}
+          MDB_PASSWORD: ${{ secrets.MDB_PASSWORD }}
+          DB_NAME: ${{ secrets.DB_NAME }}
+          COLLECTION_NAME: ${{ secrets.COLLECTION_NAME }}
+          TIMEZONE: ${{ vars.TIMEZONE }}
+        run: uv run python -m src.main
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

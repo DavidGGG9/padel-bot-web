@@ -5,6 +5,7 @@ description = "WEB UI for padelbot"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "pre-commit>=4.6.2",
     "pydantic>=2.13.5",
     "pydantic-settings>=2.15.0",
     "pymongo>=4.17.0",
