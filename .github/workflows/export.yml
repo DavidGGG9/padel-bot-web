@@ -51,6 +51,7 @@ jobs:
           payload=$(printf '[{"ipAddress":"%s","comment":"GitHub Actions run %s"}]' "$RUNNER_IP" "$GITHUB_RUN_ID")
           status=$(curl -sS -o /tmp/atlas_add_ip.json -w "%{http_code}" \
             --digest --user "${ATLAS_PUBLIC_KEY}:${ATLAS_PRIVATE_KEY}" \
+            --header "Accept: application/vnd.atlas.2023-01-01+json" \
             --header "Content-Type: application/json" \
             --request POST \
             --data "$payload" \
@@ -86,6 +87,7 @@ jobs:
           set -euo pipefail
           status=$(curl -sS -o /tmp/atlas_remove_ip.json -w "%{http_code}" \
             --digest --user "${ATLAS_PUBLIC_KEY}:${ATLAS_PRIVATE_KEY}" \
+            --header "Accept: application/vnd.atlas.2023-01-01+json" \
             --request DELETE \
             "https://cloud.mongodb.com/api/atlas/v2/groups/${ATLAS_PROJECT_ID}/accessList/${RUNNER_IP}")
 
