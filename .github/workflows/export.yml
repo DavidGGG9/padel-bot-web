@@ -2,7 +2,7 @@ name: Refresh and deploy Pages
 
 on:
   push:
-    branches: [develop]
+    branches: [main]
     paths-ignore:
       - 'docs/availabilities.json'
   schedule:
