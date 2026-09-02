@@ -36,6 +36,35 @@ jobs:
       - name: Install dependencies
         run: uv sync
 
+      - name: Detect runner public IP
+        id: runner_ip
+        run: echo "ip=$(curl -fsSL https://api.ipify.org)" >> "$GITHUB_OUTPUT"
+
+      - name: Temporarily allow runner IP in MongoDB Atlas
+        env:
+          ATLAS_PUBLIC_KEY: ${{ secrets.ATLAS_PUBLIC_KEY }}
+          ATLAS_PRIVATE_KEY: ${{ secrets.ATLAS_PRIVATE_KEY }}
+          ATLAS_PROJECT_ID: ${{ secrets.ATLAS_PROJECT_ID }}
+          RUNNER_IP: ${{ steps.runner_ip.outputs.ip }}
+        run: |
+          set -euo pipefail
+          payload=$(printf '[{"ipAddress":"%s","comment":"GitHub Actions run %s"}]' "$RUNNER_IP" "$GITHUB_RUN_ID")
+          status=$(curl -sS -o /tmp/atlas_add_ip.json -w "%{http_code}" \
+            --digest --user "${ATLAS_PUBLIC_KEY}:${ATLAS_PRIVATE_KEY}" \
+            --header "Content-Type: application/json" \
+            --request POST \
+            --data "$payload" \
+            "https://cloud.mongodb.com/api/atlas/v2/groups/${ATLAS_PROJECT_ID}/accessList")
+
+          if [[ "$status" != "201" && "$status" != "409" ]]; then
+            echo "Failed to add runner IP to Atlas access list (HTTP $status)."
+            cat /tmp/atlas_add_ip.json
+            exit 1
+          fi
+
+      - name: Wait for Atlas access list propagation
+        run: sleep 20
+
       - name: Refresh availabilities JSON
         env:
           OUTPUT_PATH: docs/availabilities.json
@@ -45,6 +74,25 @@ jobs:
           COLLECTION_NAME: ${{ secrets.COLLECTION_NAME }}
           TIMEZONE: ${{ vars.TIMEZONE }}
         run: uv run python -m src.main
+
+      - name: Remove runner IP from MongoDB Atlas
+        if: always()
+        env:
+          ATLAS_PUBLIC_KEY: ${{ secrets.ATLAS_PUBLIC_KEY }}
+          ATLAS_PRIVATE_KEY: ${{ secrets.ATLAS_PRIVATE_KEY }}
+          ATLAS_PROJECT_ID: ${{ secrets.ATLAS_PROJECT_ID }}
+          RUNNER_IP: ${{ steps.runner_ip.outputs.ip }}
+        run: |
+          set -euo pipefail
+          status=$(curl -sS -o /tmp/atlas_remove_ip.json -w "%{http_code}" \
+            --digest --user "${ATLAS_PUBLIC_KEY}:${ATLAS_PRIVATE_KEY}" \
+            --request DELETE \
+            "https://cloud.mongodb.com/api/atlas/v2/groups/${ATLAS_PROJECT_ID}/accessList/${RUNNER_IP}")
+
+          if [[ "$status" != "200" && "$status" != "202" && "$status" != "204" && "$status" != "404" ]]; then
+            echo "Warning: failed to remove runner IP from Atlas access list (HTTP $status)."
+            cat /tmp/atlas_remove_ip.json
+          fi
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
