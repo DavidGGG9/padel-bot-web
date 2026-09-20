@@ -11,6 +11,7 @@ logging.basicConfig(level=logging.INFO)
 async def main() -> None:
     exporter = Exporter(settings)
     await exporter.export_availabilities()
+    await exporter.export_scrape_runs()
 
 
 if __name__ == "__main__":

@@ -5,8 +5,9 @@ on:
     branches: [main]
     paths-ignore:
       - 'docs/availabilities.json'
+      - 'docs/scrape_runs.json'
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '0 */2 * * *'
   workflow_dispatch: {}
 
 # Needed to publish to GitHub Pages
@@ -68,7 +69,8 @@ jobs:
 
       - name: Refresh availabilities JSON
         env:
-          OUTPUT_PATH: docs/availabilities.json
+          AVAILABILITIES_OUTPUT_PATH: docs/availabilities.json
+          SCRAPE_RUNS_OUTPUT_PATH: docs/scrape_runs.json
           MDB_USER: ${{ secrets.MDB_USER }}
           MDB_PASSWORD: ${{ secrets.MDB_PASSWORD }}
           DB_NAME: ${{ secrets.DB_NAME }}

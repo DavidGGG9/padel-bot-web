@@ -46,12 +46,43 @@
     margin: 0 auto;
     padding: 0 16px 48px;
   }
+  .view-tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: fixed;
+    left: 16px;
+    top: 96px;
+    width: 210px;
+    padding: 6px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    z-index: 5;
+  }
+  .view-tab {
+    width: 100%;
+    border: 1px solid var(--border);
+    background: #F8FAF9;
+    color: var(--muted);
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 13.5px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .view-tab.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: var(--primary-ink);
+  }
+  .panel { margin-top: 10px; }
+  .panel.hidden { display: none; }
   .filters {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius);
     padding: 12px;
-    margin-top: -16px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 8px;
@@ -159,6 +190,83 @@
     font-size: 14px;
     padding: 40px 12px;
   }
+  .fresh-summary {
+    font-size: 13px;
+    color: var(--muted);
+    margin: 14px 2px 8px;
+  }
+  .club-status {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 12px 14px;
+    margin-bottom: 8px;
+  }
+  .club-status .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .club-status .club-name {
+    font-size: 14.5px;
+    font-weight: 700;
+  }
+  .club-status .tick {
+    flex: 0 0 auto;
+    font-size: 12.5px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 999px;
+    border: 1px solid;
+  }
+  .club-status .tick.ok {
+    color: #1B5E20;
+    background: #E7F7EA;
+    border-color: #B9E2C0;
+  }
+  .club-status .tick.ko {
+    color: #7A1212;
+    background: #FBE9E9;
+    border-color: #F0B8B8;
+  }
+  .club-status .latest-date {
+    font-size: 12.5px;
+    color: var(--muted);
+    margin-bottom: 7px;
+  }
+  .club-status .bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    min-height: 52px;
+    overflow-x: auto;
+    padding: 6px 1px 2px;
+    scrollbar-width: thin;
+  }
+  .club-status .bar {
+    width: 12px;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    flex: 0 0 auto;
+  }
+  .club-status .bar.ok { background: #3CB371; }
+  .club-status .bar.ko { background: #D64545; }
+  .club-status .bar.na { background: #D3DBD8; }
+  @media (max-width: 480px) {
+    .club-status .row { align-items: flex-start; flex-direction: column; }
+  }
+  @media (max-width: 1024px) {
+    .view-tabs {
+      position: static;
+      width: auto;
+      flex-direction: row;
+      margin-top: -16px;
+    }
+    .view-tab { width: auto; flex: 1; }
+  }
 </style>
 </head>
 <body>
@@ -169,23 +277,43 @@
 </header>
 
 <main>
-  <div class="filters">
-    <select id="filter-city"><option value="">Toutes les villes</option></select>
-    <select id="filter-club"><option value="">Tous les clubs</option></select>
-    <input class="search" id="filter-search" type="text" placeholder="Rechercher un club...">
-    <button class="reset" id="reset">Réinitialiser les filtres</button>
+  <div class="view-tabs">
+    <button class="view-tab active" id="tab-availabilities" type="button">Disponibilités</button>
+    <button class="view-tab" id="tab-freshness" type="button">Fraîcheur des données</button>
   </div>
 
-  <div class="day-tabs" id="day-tabs"></div>
-  <p class="summary" id="summary"></p>
-  <div id="slot-list"></div>
+  <section class="panel" id="panel-availabilities">
+    <div class="filters">
+      <select id="filter-city"><option value="">Toutes les villes</option></select>
+      <select id="filter-club"><option value="">Tous les clubs</option></select>
+      <select class="search" id="filter-duration-min">
+        <option value="0">Durée min: toutes</option>
+        <option value="30">Durée min: 30 min</option>
+        <option value="60">Durée min: 60 min</option>
+        <option value="90">Durée min: 90 min</option>
+        <option value="120">Durée min: 120 min</option>
+      </select>
+      <button class="reset" id="reset">Réinitialiser les filtres</button>
+    </div>
+
+    <div class="day-tabs" id="day-tabs"></div>
+    <p class="summary" id="summary"></p>
+    <div id="slot-list"></div>
+  </section>
+
+  <section class="panel hidden" id="panel-freshness">
+    <p class="fresh-summary" id="fresh-summary"></p>
+    <div id="fresh-list"></div>
+  </section>
 </main>
 
 <script>
   const DATA_URL = './availabilities.json';
+  const SCRAPE_RUNS_URL = './scrape_runs.json';
   let allSlots = [];
+  let scrapeRuns = [];
   let days = [];
-  let state = { city: '', club: '', search: '', day: null };
+  let state = { city: '', club: '', durationMin: 0, day: null, view: 'availabilities' };
 
   function fmtTime(iso) {
     const d = new Date(iso);
@@ -222,6 +350,20 @@
     return [...new Set(values)].sort((a, b) => a.localeCompare(b));
   }
 
+  function fmtIsoDate(isoDate) {
+    const d = new Date(isoDate + 'T12:00:00');
+    return d.toLocaleDateString('fr-FR', { weekday: 'short', day: 'numeric', month: 'short' });
+  }
+
+  function getNext7DayKeys(baseDate = new Date()) {
+    const start = new Date(baseDate);
+    start.setHours(12, 0, 0, 0);
+    return Array.from({ length: 7 }, (_, i) => {
+      const d = new Date(start.getTime() + i * 86400000);
+      return d.toISOString().slice(0, 10);
+    });
+  }
+
   function populateFilterOptions() {
     const citySel = document.getElementById('filter-city');
     const clubSel = document.getElementById('filter-club');
@@ -250,11 +392,16 @@
       .filter(s => dayKey(s.start) === state.day)
       .filter(s => !state.city || s.city === state.city)
       .filter(s => !state.club || s.club === state.club)
-      .filter(s => !state.search || s.club.toLowerCase().includes(state.search.toLowerCase()))
+      .filter(s => Number(s.durationMinutes) >= state.durationMin)
       .sort((a, b) => new Date(a.start) - new Date(b.start));
   }
 
   function render() {
+    if (state.view !== 'availabilities') {
+      renderFreshness();
+      return;
+    }
+
     renderDayTabs();
     const slots = filteredSlotsForDay();
     const summary = document.getElementById('summary');
@@ -288,29 +435,137 @@
     });
   }
 
+  function renderFreshness() {
+    const freshList = document.getElementById('fresh-list');
+    const summary = document.getElementById('fresh-summary');
+    freshList.innerHTML = '';
+    const todayKey = new Date().toISOString().slice(0, 10);
+
+    if (!scrapeRuns.length) {
+      summary.textContent = '';
+      const empty = document.createElement('div');
+      empty.className = 'empty';
+      empty.textContent = 'Aucune donnée de fraîcheur disponible (scrape_runs.json introuvable ou vide).';
+      freshList.appendChild(empty);
+      return;
+    }
+
+    const byClub = new Map();
+    scrapeRuns.forEach(run => {
+      if (!byClub.has(run.club)) byClub.set(run.club, []);
+      byClub.get(run.club).push(run);
+    });
+
+    const clubs = [...byClub.keys()].sort((a, b) => a.localeCompare(b));
+    const next7 = getNext7DayKeys();
+    summary.textContent = `${clubs.length} club${clubs.length > 1 ? 's' : ''} suivis`;
+
+    clubs.forEach(club => {
+      const runs = byClub.get(club);
+      runs.sort((a, b) => {
+        if (a.availabilityDate === b.availabilityDate) {
+          return new Date(b.scrapedAt) - new Date(a.scrapedAt);
+        }
+        return a.availabilityDate.localeCompare(b.availabilityDate);
+      });
+
+      const visibleRuns = runs.filter(run => run.availabilityDate >= todayKey);
+      const latest = visibleRuns[visibleRuns.length - 1];
+
+      const statusByDate = new Map();
+      runs.forEach(run => statusByDate.set(run.availabilityDate, String(run.status).toLowerCase()));
+      const sevenDaysOk = next7.every(day => statusByDate.get(day) === 'success');
+
+      const card = document.createElement('article');
+      card.className = 'club-status';
+
+      const row = document.createElement('div');
+      row.className = 'row';
+
+      const name = document.createElement('div');
+      name.className = 'club-name';
+      name.textContent = club;
+
+      const tick = document.createElement('div');
+      tick.className = 'tick ' + (sevenDaysOk ? 'ok' : 'ko');
+      tick.textContent = sevenDaysOk ? '✓ 7j OK' : '✕ 7j incomplet';
+
+      row.appendChild(name);
+      row.appendChild(tick);
+
+      const date = document.createElement('div');
+      date.className = 'latest-date';
+      date.textContent = latest
+        ? `Dernier jour scrappé: ${fmtIsoDate(latest.availabilityDate)}`
+        : "Aucun scrape pour aujourd'hui et après";
+
+      const bars = document.createElement('div');
+      bars.className = 'bars';
+
+      visibleRuns.forEach(run => {
+        const status = String(run.status || 'unknown').toLowerCase();
+        const bar = document.createElement('div');
+        bar.className = 'bar ' + (status === 'success' ? 'ok' : (status === 'error' ? 'ko' : 'na'));
+        bar.title = `${club} - ${run.availabilityDate} - ${status}`;
+        bar.setAttribute('aria-label', `${club} - ${run.availabilityDate} - ${status}`);
+        bars.appendChild(bar);
+      });
+
+      card.appendChild(row);
+      card.appendChild(date);
+      card.appendChild(bars);
+      freshList.appendChild(card);
+    });
+  }
+
+  function setView(view) {
+    state.view = view;
+    document.getElementById('tab-availabilities').classList.toggle('active', view === 'availabilities');
+    document.getElementById('tab-freshness').classList.toggle('active', view === 'freshness');
+    document.getElementById('panel-availabilities').classList.toggle('hidden', view !== 'availabilities');
+    document.getElementById('panel-freshness').classList.toggle('hidden', view !== 'freshness');
+    render();
+  }
+
   function attachFilterHandlers() {
     document.getElementById('filter-city').addEventListener('change', e => { state.city = e.target.value; render(); });
     document.getElementById('filter-club').addEventListener('change', e => { state.club = e.target.value; render(); });
-    document.getElementById('filter-search').addEventListener('input', e => { state.search = e.target.value; render(); });
-    document.getElementById('reset').addEventListener('click', () => {
-      state.city = ''; state.club = ''; state.search = '';
-      document.getElementById('filter-city').value = '';
-      document.getElementById('filter-club').value = '';
-      document.getElementById('filter-search').value = '';
+    document.getElementById('filter-duration-min').addEventListener('change', e => {
+      state.durationMin = Number(e.target.value || 0);
       render();
     });
+    document.getElementById('reset').addEventListener('click', () => {
+      state.city = ''; state.club = ''; state.durationMin = 0;
+      document.getElementById('filter-city').value = '';
+      document.getElementById('filter-club').value = '';
+      document.getElementById('filter-duration-min').value = '0';
+      render();
+    });
+
+    document.getElementById('tab-availabilities').addEventListener('click', () => setView('availabilities'));
+    document.getElementById('tab-freshness').addEventListener('click', () => setView('freshness'));
   }
 
   async function init() {
     try {
-      const res = await fetch(DATA_URL, { cache: 'no-store' });
-      const data = await res.json();
+      const [availabilityRes, scrapeRunsRes] = await Promise.all([
+        fetch(DATA_URL, { cache: 'no-store' }),
+        fetch(SCRAPE_RUNS_URL, { cache: 'no-store' }).catch(() => null),
+      ]);
+
+      const data = await availabilityRes.json();
+      const scrapeData = scrapeRunsRes ? await scrapeRunsRes.json() : { scrapeRuns: [] };
+
       allSlots = data.availabilities || [];
+      scrapeRuns = scrapeData.scrapeRuns || [];
       days = uniqueSorted(allSlots.map(s => dayKey(s.start)));
       state.day = days[0] || null;
 
-      document.getElementById('updated').textContent = data.generatedAt
-        ? 'Mis à jour : ' + new Date(data.generatedAt).toLocaleString('fr-FR')
+      const generatedLabels = [];
+      if (data.generatedAt) generatedLabels.push('Dispos: ' + new Date(data.generatedAt).toLocaleString('fr-FR'));
+      if (scrapeData.generatedAt) generatedLabels.push('Fraîcheur: ' + new Date(scrapeData.generatedAt).toLocaleString('fr-FR'));
+      document.getElementById('updated').textContent = generatedLabels.length
+        ? 'Mis à jour : ' + generatedLabels.join(' | ')
         : '';
 
       populateFilterOptions();

@@ -1,0 +1,1197 @@
+{
+  "generatedAt": "2026-09-20T16:40:52.783243+00:00",
+  "scrapeRuns": [
+    {
+      "id": "6a8207dd8c28b54d38c1a1fc",
+      "club": "Champ-Fleuri",
+      "availabilityDate": "2026-08-17",
+      "scrapedAt": "2026-08-16T18:56:29.392000",
+      "slotsCount": 222,
+      "status": "success"
+    },
+    {
+      "id": "6a8207858c28b54d38c1a1f0",
+      "club": "Kaz \u00e0 Padel",
+      "availabilityDate": "2026-08-17",
+      "scrapedAt": "2026-08-16T18:55:01.266000",
+      "slotsCount": 156,
+      "status": "success"
+    },
+    {
+      "id": "6a8207d78c28b54d38c1a1fb",
+      "club": "Oasis",
+      "availabilityDate": "2026-08-17",
+      "scrapedAt": "2026-08-16T18:56:23.024000",
+      "slotsCount": 77,
+      "status": "success"
+    },
+    {
+      "id": "6a8207dd8c28b54d38c1a1fd",
+      "club": "RPC",
+      "availabilityDate": "2026-08-17",
+      "scrapedAt": "2026-08-16T18:56:29.553000",
+      "slotsCount": 9,
+      "status": "success"
+    },
+    {
+      "id": "6a8207e38c28b54d38c1a1ff",
+      "club": "TCD",
+      "availabilityDate": "2026-08-17",
+      "scrapedAt": "2026-08-16T18:56:35.792000",
+      "slotsCount": 4,
+      "status": "success"
+    },
+    {
+      "id": "6a8207f18c28b54d38c1a207",
+      "club": "Champ-Fleuri",
+      "availabilityDate": "2026-08-18",
+      "scrapedAt": "2026-08-16T18:56:49.831000",
+      "slotsCount": 138,
+      "status": "success"
+    },
+    {
+      "id": "6a82078b8c28b54d38c1a1f3",
+      "club": "Kaz \u00e0 Padel",
+      "availabilityDate": "2026-08-18",
+      "scrapedAt": "2026-08-16T18:55:07.963000",
+      "slotsCount": 115,
+      "status": "success"
+    },
+    {
+      "id": "6a8207e08c28b54d38c1a1fe",
+      "club": "Oasis",
+      "availabilityDate": "2026-08-18",
+      "scrapedAt": "2026-08-16T18:56:32.315000",
+      "slotsCount": 46,
+      "status": "success"
+    },
+    {
+      "id": "6a8207e68c28b54d38c1a201",
+      "club": "RPC",
+      "availabilityDate": "2026-08-18",
+      "scrapedAt": "2026-08-16T18:56:38.989000",
+      "slotsCount": 14,
+      "status": "success"
+    },
+    {
+      "id": "6a8207ea8c28b54d38c1a203",
+      "club": "TCD",
+      "availabilityDate": "2026-08-18",
+      "scrapedAt": "2026-08-16T18:56:42.665000",
+      "slotsCount": 4,
+      "status": "success"
+    },
+    {
+      "id": "6a82080a8c28b54d38c1a211",
+      "club": "Champ-Fleuri",
+      "availabilityDate": "2026-08-19",
+      "scrapedAt": "2026-08-16T18:57:14.988000",
+      "slotsCount": 220,
+      "status": "success"
+    },
+    {
+      "id": "6a8207928c28b54d38c1a1f5",
+      "club": "Kaz \u00e0 Padel",
+      "availabilityDate": "2026-08-19",
+      "scrapedAt": "2026-08-16T18:55:14.289000",
+      "slotsCount": 135,
+      "status": "success"
+    },
+    {
+      "id": "6a8207e58c28b54d38c1a200",
+      "club": "Oasis",
+      "availabilityDate": "2026-08-19",
+      "scrapedAt": "2026-08-16T18:56:37.977000",
+      "slotsCount": 76,
+      "status": "success"
+    },
+    {
+      "id": "6a8207ef8c28b54d38c1a205",
+      "club": "RPC",
+      "availabilityDate": "2026-08-19",
+      "scrapedAt": "2026-08-16T18:56:47.895000",
+      "slotsCount": 9,
+      "status": "success"
+    },
+    {
+      "id": "6a8207f18c28b54d38c1a208",
+      "club": "TCD",
+      "availabilityDate": "2026-08-19",
+      "scrapedAt": "2026-08-16T18:56:49.870000",
+      "slotsCount": 4,
+      "status": "success"
+    },
+    {
+      "id": "6a82081f8c28b54d38c1a216",
+      "club": "Champ-Fleuri",
+      "availabilityDate": "2026-08-20",
+      "scrapedAt": "2026-08-16T18:57:35.087000",
+      "slotsCount": 80,
+      "status": "success"
+    },
+    {
+      "id": "6a8207998c28b54d38c1a1f6",
+      "club": "Kaz \u00e0 Padel",
+      "availabilityDate": "2026-08-20",
+      "scrapedAt": "2026-08-16T18:55:21.764000",
+      "slotsCount": 157,
+      "status": "success"
+    },
+    {
+      "id": "6a8207ec8c28b54d38c1a204",
+      "club": "Oasis",
+      "availabilityDate": "2026-08-20",
+      "scrapedAt": "2026-08-16T18:56:44.799000",
+      "slotsCount": 88,
+      "status": "success"
+    },
+    {
+      "id": "6a8207f88c28b54d38c1a20b",
+      "club": "RPC",
+      "availabilityDate": "2026-08-20",
+      "scrapedAt": "2026-08-16T18:56:56.877000",
+      "slotsCount": 8,
+      "status": "success"
+    },
+    {
+      "id": "6a8207fb8c28b54d38c1a20c",
+      "club": "TCD",
+      "availabilityDate": "2026-08-20",
+      "scrapedAt": "2026-08-16T18:56:59.987000",
+      "slotsCount": 4,
+      "status": "success"
+    },
+    {
+      "id": "6a8208308c28b54d38c1a217",
+      "club": "Champ-Fleuri",
+      "availabilityDate": "2026-08-21",
+      "scrapedAt": "2026-08-16T18:57:52.075000",
+      "slotsCount": 196,
+      "status": "success"
+    },
+    {
+      "id": "6a8207a18c28b54d38c1a1f7",
+      "club": "Kaz \u00e0 Padel",
+      "availabilityDate": "2026-08-21",
+      "scrapedAt": "2026-08-16T18:55:29.096000",
+      "slotsCount": 169,
+      "status": "success"
+    },
+    {
+      "id": "6a8207f28c28b54d38c1a209",
+      "club": "Oasis",
+      "availabilityDate": "2026-08-21",
+      "scrapedAt": "2026-08-16T18:56:50.789000",
+      "slotsCount": 76,
+      "status": "success"
+    },
+    {
+      "id": "6a8208018c28b54d38c1a20e",
+      "club": "RPC",
+      "availabilityDate": "2026-08-21",
+      "scrapedAt": "2026-08-16T18:57:05.755000",
+      "slotsCount": 9,
+      "status": "success"
+    },
+    {
+      "id": "6a82080b8c28b54d38c1a212",
+      "club": "TCD",
+      "availabilityDate": "2026-08-21",
+      "scrapedAt": "2026-08-16T18:57:15.066000",
+      "slotsCount": 4,
+      "status": "success"
+    },
+    {
+      "id": "6a8208448c28b54d38c1a21c",
+      "club": "Champ-Fleuri",
+      "availabilityDate": "2026-08-22",
+      "scrapedAt": "2026-08-21T18:01:33.834000",
+      "slotsCount": 220,
+      "status": "success"
+    },
+    {
+      "id": "6a8207a68c28b54d38c1a1f8",
+      "club": "Kaz \u00e0 Padel",
+      "availabilityDate": "2026-08-22",
+      "scrapedAt": "2026-08-21T18:00:18.105000",
+      "slotsCount": 28,
+      "status": "success"
+    },
+    {
+      "id": "6a8207f78c28b54d38c1a20a",
+      "club": "Oasis",
+      "availabilityDate": "2026-08-22",
+      "scrapedAt": "2026-08-21T18:00:18.417000",
+      "slotsCount": 30,
+      "status": "success"
+    },
+    {
+      "id": "6a82080a8c28b54d38c1a210",
+      "club": "RPC",
+      "availabilityDate": "2026-08-22",
+      "scrapedAt": "2026-08-21T18:00:25.828000",
+      "slotsCount": 14,
+      "status": "success"
+    },
+    {
+      "id": "6a8208128c28b54d38c1a213",
+      "club": "TCD",
+      "availabilityDate": "2026-08-22",
+      "scrapedAt": "2026-08-21T18:01:22.963000",
+      "slotsCount": 4,
+      "status": "success"
+    },
+    {
+      "id": "6a8208578c28b54d38c1a21d",
+      "club": "Champ-Fleuri",
+      "availabilityDate": "2026-08-23",
+      "scrapedAt": "2026-08-22T06:35:54.917000",
+      "slotsCount": 80,
+      "status": "success"
+    },
+    {
+      "id": "6a8207ad8c28b54d38c1a1f9",
+      "club": "Kaz \u00e0 Padel",
+      "availabilityDate": "2026-08-23",
+      "scrapedAt": "2026-08-23T14:21:27.978000",
+      "slotsCount": 1,
+      "status": "success"
+    },
+    {
+      "id": "6a8207fe8c28b54d38c1a20d",
+      "club": "Oasis",
+      "availabilityDate": "2026-08-23",
+      "scrapedAt": "2026-08-22T06:35:51.376000",
+      "slotsCount": 69,
+      "status": "success"
+    },
+    {
+      "id": "6a8208138c28b54d38c1a214",
+      "club": "RPC",
+      "availabilityDate": "2026-08-23",
+      "scrapedAt": "2026-08-22T06:35:47.345000",
+      "slotsCount": 0,
+      "status": "error"
+    },
+    {
+      "id": "6a82081a8c28b54d38c1a215",
+      "club": "TCD",
+      "availabilityDate": "2026-08-23",
+      "scrapedAt": "2026-08-23T14:21:28.469000",
+      "slotsCount": 4,
+      "status": "success"
+    },
+    {
+      "id": "6a888a4d8c28b54d38c9750a",
+      "club": "Champ-Fleuri",
+      "availabilityDate": "2026-08-24",
+      "scrapedAt": "2026-08-23T18:00:28.571000",
+      "slotsCount": 192,
+      "status": "success"
+    },
+    {
+      "id": "6a888a308c28b54d38c974f0",
+      "club": "Kaz \u00e0 Padel",
+      "availabilityDate": "2026-08-24",
+      "scrapedAt": "2026-08-23T18:00:12.757000",
+      "slotsCount": 111,
+      "status": "success"
+    },
+    {
+      "id": "6a888a2a8c28b54d38c974eb",
+      "club": "Oasis",
+      "availabilityDate": "2026-08-24",
+      "scrapedAt": "2026-08-23T18:00:12.689000",
+      "slotsCount": 74,
+      "status": "success"
+    },
+    {
+      "id": "6a888a398c28b54d38c974f9",
+      "club": "RPC",
+      "availabilityDate": "2026-08-24",
+      "scrapedAt": "2026-08-23T18:00:12.811000",
+      "slotsCount": 7,
+      "status": "success"
+    },
+    {
+      "id": "6a888a2f8c28b54d38c974ee",
+      "club": "TCD",
+      "availabilityDate": "2026-08-24",
+      "scrapedAt": "2026-08-23T18:00:13.682000",
+      "slotsCount": 4,
+      "status": "success"
+    },
+    {
+      "id": "6a888a618c28b54d38c9751b",
+      "club": "Champ-Fleuri",
+      "availabilityDate": "2026-08-25",
+      "scrapedAt": "2026-08-23T20:01:54.597000",
+      "slotsCount": 132,
+      "status": "success"
+    },
+    {
+      "id": "6a888a358c28b54d38c974f6",
+      "club": "Kaz \u00e0 Padel",
+      "availabilityDate": "2026-08-25",
+      "scrapedAt": "2026-08-23T20:00:15.193000",
+      "slotsCount": 131,
+      "status": "success"
+    },
+    {
+      "id": "6a888a368c28b54d38c974f7",
+      "club": "Oasis",
+      "availabilityDate": "2026-08-25",
+      "scrapedAt": "2026-08-23T20:00:13.296000",
+      "slotsCount": 45,
+      "status": "success"
+    },
+    {
+      "id": "6a888a438c28b54d38c97501",
+      "club": "RPC",
+      "availabilityDate": "2026-08-25",
+      "scrapedAt": "2026-08-23T20:00:15.241000",
+      "slotsCount": 10,
+      "status": "success"
+    },
+    {
+      "id": "6a888a348c28b54d38c974f3",
+      "club": "TCD",
+      "availabilityDate": "2026-08-25",
+      "scrapedAt": "2026-08-23T20:00:15.261000",
+      "slotsCount": 4,
+      "status": "success"
+    },
+    {
+      "id": "6a888a768c28b54d38c97529",
+      "club": "Champ-Fleuri",
+      "availabilityDate": "2026-08-26",
+      "scrapedAt": "2026-08-23T20:00:36.488000",
+      "slotsCount": 150,
+      "status": "success"
+    },
+    {
+      "id": "6a888a3a8c28b54d38c974fb",
+      "club": "Kaz \u00e0 Padel",
+      "availabilityDate": "2026-08-26",
+      "scrapedAt": "2026-08-23T20:00:20.758000",
+      "slotsCount": 143,
+      "status": "success"
+    },
+    {
+      "id": "6a888a3b8c28b54d38c974fc",
+      "club": "Oasis",
+      "availabilityDate": "2026-08-26",
+      "scrapedAt": "2026-08-23T20:00:18.178000",
+      "slotsCount": 55,
+      "status": "success"
+    },
+    {
+      "id": "6a888a4c8c28b54d38c97507",
+      "club": "RPC",
+      "availabilityDate": "2026-08-26",
+      "scrapedAt": "2026-08-23T20:00:24.454000",
+      "slotsCount": 10,
+      "status": "success"
+    },
+    {
+      "id": "6a888a3a8c28b54d38c974fa",
+      "club": "TCD",
+      "availabilityDate": "2026-08-26",
+      "scrapedAt": "2026-08-23T20:00:20.848000",
+      "slotsCount": 4,
+      "status": "success"
+    },
+    {
+      "id": "6a888a9c8c28b54d38c97537",
+      "club": "Champ-Fleuri",
+      "availabilityDate": "2026-08-27",
+      "scrapedAt": "2026-08-23T20:00:55.306000",
+      "slotsCount": 170,
+      "status": "success"
+    },
+    {
+      "id": "6a888a408c28b54d38c974fe",
+      "club": "Kaz \u00e0 Padel",
+      "availabilityDate": "2026-08-27",
+      "scrapedAt": "2026-08-23T20:00:25.245000",
+      "slotsCount": 21,
+      "status": "success"
+    },
+    {
+      "id": "6a888a548c28b54d38c9750d",
+      "club": "Oasis",
+      "availabilityDate": "2026-08-27",
+      "scrapedAt": "2026-08-23T20:00:24.352000",
+      "slotsCount": 87,
+      "status": "success"
+    },
+    {
+      "id": "6a888a558c28b54d38c9750e",
+      "club": "RPC",
+      "availabilityDate": "2026-08-27",
+      "scrapedAt": "2026-08-23T20:00:33.742000",
+      "slotsCount": 7,
+      "status": "success"
+    },
+    {
+      "id": "6a888a3f8c28b54d38c974fd",
+      "club": "TCD",
+      "availabilityDate": "2026-08-27",
+      "scrapedAt": "2026-08-23T20:00:32.423000",
+      "slotsCount": 4,
+      "status": "success"
+    },
+    {
+      "id": "6a888aaf8c28b54d38c9753e",
+      "club": "Champ-Fleuri",
+      "availabilityDate": "2026-08-28",
+      "scrapedAt": "2026-08-23T20:01:12.582000",
+      "slotsCount": 220,
+      "status": "success"
+    },
+    {
+      "id": "6a888a468c28b54d38c97504",
+      "club": "Kaz \u00e0 Padel",
+      "availabilityDate": "2026-08-28",
+      "scrapedAt": "2026-08-23T20:00:30.350000",
+      "slotsCount": 92,
+      "status": "success"
+    },
+    {
+      "id": "6a888a5a8c28b54d38c97514",
+      "club": "Oasis",
+      "availabilityDate": "2026-08-28",
+      "scrapedAt": "2026-08-23T20:00:29.465000",
+      "slotsCount": 48,
+      "status": "success"
+    },
+    {
+      "id": "6a888a5f8c28b54d38c9751a",
+      "club": "RPC",
+      "availabilityDate": "2026-08-28",
+      "scrapedAt": "2026-08-23T20:00:42.550000",
+      "slotsCount": 11,
+      "status": "success"
+    },
+    {
+      "id": "6a888a458c28b54d38c97502",
+      "club": "TCD",
+      "availabilityDate": "2026-08-28",
+      "scrapedAt": "2026-08-23T20:00:38.142000",
+      "slotsCount": 4,
+      "status": "success"
+    },
+    {
+      "id": "6a88aecf8c28b54d38c98656",
+      "club": "Champ-Fleuri",
+      "availabilityDate": "2026-08-29",
+      "scrapedAt": "2026-08-23T20:01:35.470000",
+      "slotsCount": 194,
+      "status": "success"
+    },
+    {
+      "id": "6a88ae7f8c28b54d38c9864d",
+      "club": "Kaz \u00e0 Padel",
+      "availabilityDate": "2026-08-29",
+      "scrapedAt": "2026-08-23T20:00:36.642000",
+      "slotsCount": 81,
+      "status": "success"
+    },
+    {
+      "id": "6a88ae748c28b54d38c9864c",
+      "club": "Oasis",
+      "availabilityDate": "2026-08-29",
+      "scrapedAt": "2026-08-23T20:00:34.575000",
+      "slotsCount": 90,
+      "status": "success"
+    },
+    {
+      "id": "6a88ae958c28b54d38c98651",
+      "club": "RPC",
+      "availabilityDate": "2026-08-29",
+      "scrapedAt": "2026-08-23T20:00:51.411000",
+      "slotsCount": 9,
+      "status": "success"
+    },
+    {
+      "id": "6a88ae818c28b54d38c9864e",
+      "club": "TCD",
+      "availabilityDate": "2026-08-29",
+      "scrapedAt": "2026-08-23T20:00:45.160000",
+      "slotsCount": 4,
+      "status": "success"
+    },
+    {
+      "id": "6a8b026c8c28b54d38cab761",
+      "club": "Champ-Fleuri",
+      "availabilityDate": "2026-08-30",
+      "scrapedAt": "2026-08-23T20:02:10.333000",
+      "slotsCount": 172,
+      "status": "success"
+    },
+    {
+      "id": "6a8b022e8c28b54d38cab75d",
+      "club": "Kaz \u00e0 Padel",
+      "availabilityDate": "2026-08-30",
+      "scrapedAt": "2026-08-23T20:00:41.340000",
+      "slotsCount": 12,
+      "status": "success"
+    },
+    {
+      "id": "6a8b19338c28b54d38cabc77",
+      "club": "Oasis",
+      "availabilityDate": "2026-08-30",
+      "scrapedAt": "2026-08-23T20:00:39.494000",
+      "slotsCount": 71,
+      "status": "success"
+    },
+    {
+      "id": "6a8b02598c28b54d38cab760",
+      "club": "RPC",
+      "availabilityDate": "2026-08-30",
+      "scrapedAt": "2026-08-23T20:01:00.960000",
+      "slotsCount": 9,
+      "status": "success"
+    },
+    {
+      "id": "6a8b02328c28b54d38cab75e",
+      "club": "TCD",
+      "availabilityDate": "2026-08-30",
+      "scrapedAt": "2026-08-23T20:00:50.440000",
+      "slotsCount": 4,
+      "status": "success"
+    },
+    {
+      "id": "6a8b51d58c28b54d38cacffc",
+      "club": "Champ-Fleuri",
+      "availabilityDate": "2026-08-31",
+      "scrapedAt": "2026-08-30T19:13:11.315000",
+      "slotsCount": 228,
+      "status": "success"
+    },
+    {
+      "id": "6a8b51708c28b54d38cacf50",
+      "club": "Kaz \u00e0 Padel",
+      "availabilityDate": "2026-08-31",
+      "scrapedAt": "2026-08-30T19:11:04.057000",
+      "slotsCount": 99,
+      "status": "success"
+    },
+    {
+      "id": "6a8b516d8c28b54d38cacf4f",
+      "club": "Oasis",
+      "availabilityDate": "2026-08-31",
+      "scrapedAt": "2026-08-30T19:11:11.307000",
+      "slotsCount": 31,
+      "status": "success"
+    },
+    {
+      "id": "6a8b51868c28b54d38cacf53",
+      "club": "RPC",
+      "availabilityDate": "2026-08-31",
+      "scrapedAt": "2026-08-30T19:11:11.127000",
+      "slotsCount": 8,
+      "status": "success"
+    },
+    {
+      "id": "6a93d564b9fbbe308b3c5f53",
+      "club": "Sain-Gym",
+      "availabilityDate": "2026-08-31",
+      "scrapedAt": "2026-08-30T19:12:07.014000",
+      "slotsCount": 22,
+      "status": "success"
+    },
+    {
+      "id": "6a8b51788c28b54d38cacf51",
+      "club": "TCD",
+      "availabilityDate": "2026-08-31",
+      "scrapedAt": "2026-08-30T19:11:06.268000",
+      "slotsCount": 4,
+      "status": "success"
+    },
+    {
+      "id": "6a948056b9fbbe308b3ca105",
+      "club": "Champ-Fleuri",
+      "availabilityDate": "2026-09-01",
+      "scrapedAt": "2026-08-30T19:11:18.361000",
+      "slotsCount": 0,
+      "status": "error"
+    },
+    {
+      "id": "6a93cdffb9fbbe308b3c5c54",
+      "club": "Kaz \u00e0 Padel",
+      "availabilityDate": "2026-09-01",
+      "scrapedAt": "2026-08-30T19:11:09.825000",
+      "slotsCount": 93,
+      "status": "success"
+    },
+    {
+      "id": "6a93ce08b9fbbe308b3c5c5a",
+      "club": "Oasis",
+      "availabilityDate": "2026-09-01",
+      "scrapedAt": "2026-08-30T19:11:16.666000",
+      "slotsCount": 41,
+      "status": "success"
+    },
+    {
+      "id": "6a93ce0cb9fbbe308b3c5c5d",
+      "club": "RPC",
+      "availabilityDate": "2026-09-01",
+      "scrapedAt": "2026-08-30T19:11:20.907000",
+      "slotsCount": 14,
+      "status": "success"
+    },
+    {
+      "id": "6a93d569b9fbbe308b3c5f54",
+      "club": "Sain-Gym",
+      "availabilityDate": "2026-09-01",
+      "scrapedAt": "2026-08-30T19:11:07.642000",
+      "slotsCount": 13,
+      "status": "success"
+    },
+    {
+      "id": "6a93ce01b9fbbe308b3c5c55",
+      "club": "TCD",
+      "availabilityDate": "2026-09-01",
+      "scrapedAt": "2026-08-30T19:11:11.940000",
+      "slotsCount": 4,
+      "status": "success"
+    },
+    {
+      "id": "6a93ce03b9fbbe308b3c5c57",
+      "club": "Kaz \u00e0 Padel",
+      "availabilityDate": "2026-09-02",
+      "scrapedAt": "2026-08-30T19:11:14.081000",
+      "slotsCount": 59,
+      "status": "success"
+    },
+    {
+      "id": "6a93ce0db9fbbe308b3c5c5f",
+      "club": "Oasis",
+      "availabilityDate": "2026-09-02",
+      "scrapedAt": "2026-08-30T19:11:21.878000",
+      "slotsCount": 53,
+      "status": "success"
+    },
+    {
+      "id": "6a93ce14b9fbbe308b3c5c65",
+      "club": "RPC",
+      "availabilityDate": "2026-09-02",
+      "scrapedAt": "2026-08-30T19:11:29.445000",
+      "slotsCount": 8,
+      "status": "success"
+    },
+    {
+      "id": "6a93d56db9fbbe308b3c5f55",
+      "club": "Sain-Gym",
+      "availabilityDate": "2026-09-02",
+      "scrapedAt": "2026-08-30T19:11:11.894000",
+      "slotsCount": 20,
+      "status": "success"
+    },
+    {
+      "id": "6a93ce06b9fbbe308b3c5c59",
+      "club": "TCD",
+      "availabilityDate": "2026-09-02",
+      "scrapedAt": "2026-08-30T19:11:17.902000",
+      "slotsCount": 4,
+      "status": "success"
+    },
+    {
+      "id": "6a93ce06b9fbbe308b3c5c58",
+      "club": "Kaz \u00e0 Padel",
+      "availabilityDate": "2026-09-03",
+      "scrapedAt": "2026-08-30T19:11:22.462000",
+      "slotsCount": 12,
+      "status": "success"
+    },
+    {
+      "id": "6a93ce10b9fbbe308b3c5c62",
+      "club": "Oasis",
+      "availabilityDate": "2026-09-03",
+      "scrapedAt": "2026-08-30T19:11:25.981000",
+      "slotsCount": 50,
+      "status": "success"
+    },
+    {
+      "id": "6a93ce1db9fbbe308b3c5c69",
+      "club": "RPC",
+      "availabilityDate": "2026-09-03",
+      "scrapedAt": "2026-08-30T19:11:38.001000",
+      "slotsCount": 10,
+      "status": "success"
+    },
+    {
+      "id": "6a93d571b9fbbe308b3c5f56",
+      "club": "Sain-Gym",
+      "availabilityDate": "2026-09-03",
+      "scrapedAt": "2026-08-30T19:11:15.746000",
+      "slotsCount": 22,
+      "status": "success"
+    },
+    {
+      "id": "6a93ce0cb9fbbe308b3c5c5e",
+      "club": "TCD",
+      "availabilityDate": "2026-09-03",
+      "scrapedAt": "2026-08-30T19:11:24.837000",
+      "slotsCount": 4,
+      "status": "success"
+    },
+    {
+      "id": "6a93ce0bb9fbbe308b3c5c5c",
+      "club": "Kaz \u00e0 Padel",
+      "availabilityDate": "2026-09-04",
+      "scrapedAt": "2026-08-30T19:11:28.143000",
+      "slotsCount": 113,
+      "status": "success"
+    },
+    {
+      "id": "6a93ce15b9fbbe308b3c5c66",
+      "club": "Oasis",
+      "availabilityDate": "2026-09-04",
+      "scrapedAt": "2026-08-30T19:11:30.251000",
+      "slotsCount": 39,
+      "status": "success"
+    },
+    {
+      "id": "6a93ce26b9fbbe308b3c5c6c",
+      "club": "RPC",
+      "availabilityDate": "2026-09-04",
+      "scrapedAt": "2026-08-30T19:11:46.815000",
+      "slotsCount": 8,
+      "status": "success"
+    },
+    {
+      "id": "6a93d575b9fbbe308b3c5f58",
+      "club": "Sain-Gym",
+      "availabilityDate": "2026-09-04",
+      "scrapedAt": "2026-08-30T19:11:21.227000",
+      "slotsCount": 19,
+      "status": "success"
+    },
+    {
+      "id": "6a93ce12b9fbbe308b3c5c63",
+      "club": "TCD",
+      "availabilityDate": "2026-09-04",
+      "scrapedAt": "2026-08-30T19:11:30.506000",
+      "slotsCount": 4,
+      "status": "success"
+    },
+    {
+      "id": "6a93ce0fb9fbbe308b3c5c60",
+      "club": "Kaz \u00e0 Padel",
+      "availabilityDate": "2026-09-05",
+      "scrapedAt": "2026-08-30T19:11:32.047000",
+      "slotsCount": 12,
+      "status": "success"
+    },
+    {
+      "id": "6a93ce19b9fbbe308b3c5c68",
+      "club": "Oasis",
+      "availabilityDate": "2026-09-05",
+      "scrapedAt": "2026-08-30T19:11:34.333000",
+      "slotsCount": 26,
+      "status": "success"
+    },
+    {
+      "id": "6a93ce2fb9fbbe308b3c5c6d",
+      "club": "RPC",
+      "availabilityDate": "2026-09-05",
+      "scrapedAt": "2026-08-30T19:13:34.220000",
+      "slotsCount": 11,
+      "status": "success"
+    },
+    {
+      "id": "6a93d579b9fbbe308b3c5f59",
+      "club": "Sain-Gym",
+      "availabilityDate": "2026-09-05",
+      "scrapedAt": "2026-08-30T19:11:25.826000",
+      "slotsCount": 15,
+      "status": "success"
+    },
+    {
+      "id": "6a93ce17b9fbbe308b3c5c67",
+      "club": "TCD",
+      "availabilityDate": "2026-09-05",
+      "scrapedAt": "2026-08-30T19:11:35.920000",
+      "slotsCount": 4,
+      "status": "success"
+    },
+    {
+      "id": "6a93cf22b9fbbe308b3c5d1c",
+      "club": "Champ-Fleuri",
+      "availabilityDate": "2026-09-06",
+      "scrapedAt": "2026-08-30T19:16:17.300000",
+      "slotsCount": 106,
+      "status": "success"
+    },
+    {
+      "id": "6a93ce14b9fbbe308b3c5c64",
+      "club": "Kaz \u00e0 Padel",
+      "availabilityDate": "2026-09-06",
+      "scrapedAt": "2026-08-30T19:11:35.844000",
+      "slotsCount": 12,
+      "status": "success"
+    },
+    {
+      "id": "6a93ce37b9fbbe308b3c5c6e",
+      "club": "RPC",
+      "availabilityDate": "2026-09-06",
+      "scrapedAt": "2026-08-30T19:13:08.220000",
+      "slotsCount": 9,
+      "status": "success"
+    },
+    {
+      "id": "6a93d57db9fbbe308b3c5f5a",
+      "club": "Sain-Gym",
+      "availabilityDate": "2026-09-06",
+      "scrapedAt": "2026-08-30T19:11:30.250000",
+      "slotsCount": 18,
+      "status": "success"
+    },
+    {
+      "id": "6a93ce1db9fbbe308b3c5c6a",
+      "club": "TCD",
+      "availabilityDate": "2026-09-06",
+      "scrapedAt": "2026-08-30T19:11:41.799000",
+      "slotsCount": 4,
+      "status": "success"
+    },
+    {
+      "id": "6aaeed5a24a6443a3f6c3280",
+      "club": "Champ-Fleuri",
+      "availabilityDate": "2026-09-21",
+      "scrapedAt": "2026-09-20T12:00:18.354000",
+      "slotsCount": 0,
+      "status": "error"
+    },
+    {
+      "id": "6aaeed5b24a6443a3f6c3282",
+      "club": "Kaz \u00e0 Padel",
+      "availabilityDate": "2026-09-21",
+      "scrapedAt": "2026-09-20T16:00:08.521000",
+      "slotsCount": 108,
+      "status": "success"
+    },
+    {
+      "id": "6aaeed5624a6443a3f6c327f",
+      "club": "Oasis",
+      "availabilityDate": "2026-09-21",
+      "scrapedAt": "2026-09-20T16:00:16.988000",
+      "slotsCount": 86,
+      "status": "success"
+    },
+    {
+      "id": "6aaeed6424a6443a3f6c3288",
+      "club": "RPC",
+      "availabilityDate": "2026-09-21",
+      "scrapedAt": "2026-09-20T16:00:27.182000",
+      "slotsCount": 9,
+      "status": "success"
+    },
+    {
+      "id": "6aaeed5a24a6443a3f6c3281",
+      "club": "Sain-Gym",
+      "availabilityDate": "2026-09-21",
+      "scrapedAt": "2026-09-20T16:00:05.374000",
+      "slotsCount": 16,
+      "status": "success"
+    },
+    {
+      "id": "6aaeed5b24a6443a3f6c3284",
+      "club": "TCD",
+      "availabilityDate": "2026-09-21",
+      "scrapedAt": "2026-09-20T16:02:57.905000",
+      "slotsCount": 0,
+      "status": "error"
+    },
+    {
+      "id": "6aaf6e8724a6443a3f6c6b11",
+      "club": "Champ-Fleuri",
+      "availabilityDate": "2026-09-22",
+      "scrapedAt": "2026-09-20T05:27:38.247000",
+      "slotsCount": 0,
+      "status": "error"
+    },
+    {
+      "id": "6aaeed6124a6443a3f6c3285",
+      "club": "Kaz \u00e0 Padel",
+      "availabilityDate": "2026-09-22",
+      "scrapedAt": "2026-09-20T16:00:13.451000",
+      "slotsCount": 76,
+      "status": "success"
+    },
+    {
+      "id": "6aaeed5b24a6443a3f6c3283",
+      "club": "Oasis",
+      "availabilityDate": "2026-09-22",
+      "scrapedAt": "2026-09-20T16:00:21",
+      "slotsCount": 44,
+      "status": "success"
+    },
+    {
+      "id": "6aaeed7824a6443a3f6c3290",
+      "club": "RPC",
+      "availabilityDate": "2026-09-22",
+      "scrapedAt": "2026-09-20T16:00:37.249000",
+      "slotsCount": 8,
+      "status": "success"
+    },
+    {
+      "id": "6aaeed6b24a6443a3f6c328b",
+      "club": "Sain-Gym",
+      "availabilityDate": "2026-09-22",
+      "scrapedAt": "2026-09-20T16:00:10.159000",
+      "slotsCount": 18,
+      "status": "success"
+    },
+    {
+      "id": "6aaeed6324a6443a3f6c3287",
+      "club": "TCD",
+      "availabilityDate": "2026-09-22",
+      "scrapedAt": "2026-09-20T16:03:13.389000",
+      "slotsCount": 0,
+      "status": "error"
+    },
+    {
+      "id": "6aaf6e7924a6443a3f6c6b0c",
+      "club": "Champ-Fleuri",
+      "availabilityDate": "2026-09-23",
+      "scrapedAt": "2026-09-20T05:27:22.373000",
+      "slotsCount": 0,
+      "status": "error"
+    },
+    {
+      "id": "6aaeed6824a6443a3f6c3289",
+      "club": "Kaz \u00e0 Padel",
+      "availabilityDate": "2026-09-23",
+      "scrapedAt": "2026-09-20T16:00:17.875000",
+      "slotsCount": 50,
+      "status": "success"
+    },
+    {
+      "id": "6aaeed6224a6443a3f6c3286",
+      "club": "Oasis",
+      "availabilityDate": "2026-09-23",
+      "scrapedAt": "2026-09-20T16:00:25.296000",
+      "slotsCount": 69,
+      "status": "success"
+    },
+    {
+      "id": "6aaeed8224a6443a3f6c3296",
+      "club": "RPC",
+      "availabilityDate": "2026-09-23",
+      "scrapedAt": "2026-09-20T16:00:47.105000",
+      "slotsCount": 9,
+      "status": "success"
+    },
+    {
+      "id": "6aaeed7724a6443a3f6c328f",
+      "club": "Sain-Gym",
+      "availabilityDate": "2026-09-23",
+      "scrapedAt": "2026-09-20T16:00:14.317000",
+      "slotsCount": 12,
+      "status": "success"
+    },
+    {
+      "id": "6aaeed6d24a6443a3f6c328c",
+      "club": "TCD",
+      "availabilityDate": "2026-09-23",
+      "scrapedAt": "2026-09-20T16:03:19.800000",
+      "slotsCount": 0,
+      "status": "error"
+    },
+    {
+      "id": "6aaf6e8924a6443a3f6c6b12",
+      "club": "Champ-Fleuri",
+      "availabilityDate": "2026-09-24",
+      "scrapedAt": "2026-09-20T05:28:26.733000",
+      "slotsCount": 0,
+      "status": "error"
+    },
+    {
+      "id": "6aaeed7424a6443a3f6c328d",
+      "club": "Kaz \u00e0 Padel",
+      "availabilityDate": "2026-09-24",
+      "scrapedAt": "2026-09-20T16:00:22.696000",
+      "slotsCount": 21,
+      "status": "success"
+    },
+    {
+      "id": "6aaeed6a24a6443a3f6c328a",
+      "club": "Oasis",
+      "availabilityDate": "2026-09-24",
+      "scrapedAt": "2026-09-20T16:00:29.912000",
+      "slotsCount": 62,
+      "status": "success"
+    },
+    {
+      "id": "6aaeed9124a6443a3f6c329b",
+      "club": "RPC",
+      "availabilityDate": "2026-09-24",
+      "scrapedAt": "2026-09-20T16:00:55.689000",
+      "slotsCount": 9,
+      "status": "success"
+    },
+    {
+      "id": "6aaeed7e24a6443a3f6c3294",
+      "club": "Sain-Gym",
+      "availabilityDate": "2026-09-24",
+      "scrapedAt": "2026-09-20T16:00:18.621000",
+      "slotsCount": 20,
+      "status": "success"
+    },
+    {
+      "id": "6aaeed7b24a6443a3f6c3291",
+      "club": "TCD",
+      "availabilityDate": "2026-09-24",
+      "scrapedAt": "2026-09-20T16:03:26.410000",
+      "slotsCount": 0,
+      "status": "error"
+    },
+    {
+      "id": "6aaf6e4b24a6443a3f6c6b03",
+      "club": "Champ-Fleuri",
+      "availabilityDate": "2026-09-25",
+      "scrapedAt": "2026-09-20T05:28:33.347000",
+      "slotsCount": 0,
+      "status": "error"
+    },
+    {
+      "id": "6aaeed7d24a6443a3f6c3293",
+      "club": "Kaz \u00e0 Padel",
+      "availabilityDate": "2026-09-25",
+      "scrapedAt": "2026-09-20T16:00:27.859000",
+      "slotsCount": 79,
+      "status": "success"
+    },
+    {
+      "id": "6aaeed7524a6443a3f6c328e",
+      "club": "Oasis",
+      "availabilityDate": "2026-09-25",
+      "scrapedAt": "2026-09-20T16:00:34.998000",
+      "slotsCount": 3,
+      "status": "success"
+    },
+    {
+      "id": "6aaeed9d24a6443a3f6c32a1",
+      "club": "RPC",
+      "availabilityDate": "2026-09-25",
+      "scrapedAt": "2026-09-20T16:01:05.024000",
+      "slotsCount": 8,
+      "status": "success"
+    },
+    {
+      "id": "6aaeed8b24a6443a3f6c3298",
+      "club": "Sain-Gym",
+      "availabilityDate": "2026-09-25",
+      "scrapedAt": "2026-09-20T16:00:22.697000",
+      "slotsCount": 19,
+      "status": "success"
+    },
+    {
+      "id": "6aaeed8924a6443a3f6c3297",
+      "club": "TCD",
+      "availabilityDate": "2026-09-25",
+      "scrapedAt": "2026-09-20T16:03:33.406000",
+      "slotsCount": 0,
+      "status": "error"
+    },
+    {
+      "id": "6aaf6e5024a6443a3f6c6b04",
+      "club": "Champ-Fleuri",
+      "availabilityDate": "2026-09-26",
+      "scrapedAt": "2026-09-20T05:26:36.551000",
+      "slotsCount": 0,
+      "status": "error"
+    },
+    {
+      "id": "6aaeed8b24a6443a3f6c329a",
+      "club": "Kaz \u00e0 Padel",
+      "availabilityDate": "2026-09-26",
+      "scrapedAt": "2026-09-20T16:00:33.195000",
+      "slotsCount": 97,
+      "status": "success"
+    },
+    {
+      "id": "6aaeed7d24a6443a3f6c3292",
+      "club": "Oasis",
+      "availabilityDate": "2026-09-26",
+      "scrapedAt": "2026-09-20T16:00:40.690000",
+      "slotsCount": 99,
+      "status": "success"
+    },
+    {
+      "id": "6aaeeda724a6443a3f6c32a2",
+      "club": "RPC",
+      "availabilityDate": "2026-09-26",
+      "scrapedAt": "2026-09-20T16:01:13.886000",
+      "slotsCount": 11,
+      "status": "success"
+    },
+    {
+      "id": "6aaeed9224a6443a3f6c329d",
+      "club": "Sain-Gym",
+      "availabilityDate": "2026-09-26",
+      "scrapedAt": "2026-09-20T16:00:27.218000",
+      "slotsCount": 16,
+      "status": "success"
+    },
+    {
+      "id": "6aaeed9124a6443a3f6c329c",
+      "club": "TCD",
+      "availabilityDate": "2026-09-26",
+      "scrapedAt": "2026-09-20T16:03:39.400000",
+      "slotsCount": 0,
+      "status": "error"
+    },
+    {
+      "id": "6aaf6e7f24a6443a3f6c6b0e",
+      "club": "Champ-Fleuri",
+      "availabilityDate": "2026-09-27",
+      "scrapedAt": "2026-09-20T05:28:35.275000",
+      "slotsCount": 0,
+      "status": "error"
+    },
+    {
+      "id": "6aaeed9224a6443a3f6c329e",
+      "club": "Kaz \u00e0 Padel",
+      "availabilityDate": "2026-09-27",
+      "scrapedAt": "2026-09-20T16:00:38.223000",
+      "slotsCount": 154,
+      "status": "success"
+    },
+    {
+      "id": "6aaeed8b24a6443a3f6c3299",
+      "club": "Oasis",
+      "availabilityDate": "2026-09-27",
+      "scrapedAt": "2026-09-20T14:00:58.622000",
+      "slotsCount": 96,
+      "status": "success"
+    },
+    {
+      "id": "6aaeedb224a6443a3f6c32a4",
+      "club": "RPC",
+      "availabilityDate": "2026-09-27",
+      "scrapedAt": "2026-09-20T14:01:18.751000",
+      "slotsCount": 10,
+      "status": "success"
+    },
+    {
+      "id": "6aaeed9824a6443a3f6c329f",
+      "club": "Sain-Gym",
+      "availabilityDate": "2026-09-27",
+      "scrapedAt": "2026-09-20T16:00:33",
+      "slotsCount": 19,
+      "status": "success"
+    },
+    {
+      "id": "6aaeed9924a6443a3f6c32a0",
+      "club": "TCD",
+      "availabilityDate": "2026-09-27",
+      "scrapedAt": "2026-09-20T16:03:45.418000",
+      "slotsCount": 0,
+      "status": "error"
+    }
+  ]
+}

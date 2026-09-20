@@ -10,7 +10,8 @@ class Settings(BaseSettings):
 
     """
 
-    OUTPUT_PATH: str
+    AVAILABILITIES_OUTPUT_PATH: str
+    SCRAPE_RUNS_OUTPUT_PATH: str
     MDB_USER: str
     MDB_PASSWORD: SecretStr
     DB_NAME: str

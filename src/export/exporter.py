@@ -15,7 +15,7 @@ class Exporter:
         self._settings = settings
 
     @staticmethod
-    def _map_document(doc: dict) -> dict:
+    def _map_availabilities(doc: dict) -> dict:
         availability_date: str = doc["availability_date"]
         availability_time: str = doc["availability_time"]
 
@@ -30,6 +30,17 @@ class Exporter:
             "court": doc["court"],
             "start": start_iso,
             "durationMinutes": doc["availability_duration"],
+        }
+
+    @staticmethod
+    def _map_scrape_run(doc: dict) -> dict:
+        return {
+            "id": str(doc["_id"]),
+            "club": doc["club"],
+            "availabilityDate": doc["availability_date"],
+            "scrapedAt": doc["scraped_at"].isoformat(),
+            "slotsCount": doc["slots_count"],
+            "status": doc["status"],
         }
 
     async def export_availabilities(self) -> None:
@@ -62,15 +73,46 @@ class Exporter:
                 if key not in latest or doc["scraping_datetime"] > latest[key]["scraping_datetime"]:
                     latest[key] = doc
 
-            availabilities = [self._map_document(doc) for doc in latest.values()]
+            availabilities = [self._map_availabilities(doc) for doc in latest.values()]
 
             output = {
                 "generatedAt": datetime.now(UTC).isoformat(),
                 "availabilities": availabilities,
             }
 
-            output_path = Path(self._settings.OUTPUT_PATH).resolve()
+            output_path = Path(self._settings.AVAILABILITIES_OUTPUT_PATH).resolve()
             output_path.parent.mkdir(parents=True, exist_ok=True)
             output_path.write_text(json.dumps(output, indent=2), encoding="utf-8")
 
             logger.info("Wrote %d availabilities to %s", len(availabilities), output_path)
+
+    async def export_scrape_runs(self) -> None:
+        async with instantiate_mongodb_client(
+            user=self._settings.MDB_USER,
+            password=self._settings.MDB_PASSWORD.get_secret_value(),
+        ) as client:
+            collection = client[self._settings.DB_NAME]["scrape_runs"]
+
+            cursor = collection.find().sort([("availability_date", 1), ("club", 1), ("scraped_at", -1)])
+            raw_docs = await cursor.to_list(length=None)
+
+            # Dedup: keep only the most recent scraped_at per (club, availability_date).
+            latest: dict[tuple, dict] = {}
+            for doc in raw_docs:
+                key = (doc["club"], doc["availability_date"])
+                if key not in latest or doc["scraped_at"] > latest[key]["scraped_at"]:
+                    latest[key] = doc
+
+            scrape_runs = [self._map_scrape_run(doc) for doc in latest.values()]
+            scrape_runs.sort(key=lambda item: (item["availabilityDate"], item["club"]))
+
+            output = {
+                "generatedAt": datetime.now(UTC).isoformat(),
+                "scrapeRuns": scrape_runs,
+            }
+
+            output_path = Path(self._settings.SCRAPE_RUNS_OUTPUT_PATH).resolve()
+            output_path.parent.mkdir(parents=True, exist_ok=True)
+            output_path.write_text(json.dumps(output, indent=2), encoding="utf-8")
+
+            logger.info("Wrote %d scrape runs to %s", len(scrape_runs), output_path)
