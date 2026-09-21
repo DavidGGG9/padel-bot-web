@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Disponibilités padel</title>
+<title>PadelBot - Disponibilités des terrains à la Réunion</title>
 <style>
   :root {
     --bg: #F4F6F5;
@@ -272,7 +272,7 @@
 <body>
 
 <header>
-  <h1>Disponibilités padel</h1>
+  <h1>PadelBot - Disponibilités des terrains à la Réunion</h1>
   <p class="updated" id="updated"></p>
 </header>
 
@@ -313,7 +313,7 @@
   let allSlots = [];
   let scrapeRuns = [];
   let days = [];
-  let state = { city: '', club: '', durationMin: 0, day: null, view: 'availabilities' };
+  let state = { city: '', club: '', durationMin: 0, day: null, view: 'availabilities', lastChangedFilter: null };
 
   function fmtTime(iso) {
     const d = new Date(iso);
@@ -330,6 +330,13 @@
     const h = Math.floor(mins / 60);
     const m = mins % 60;
     return h > 0 ? `${h}h${String(m).padStart(2, '0')}` : `${m} min`;
+  }
+
+  function fmtCourtName(court) {
+    return String(court || '')
+      .replace(/\bterrain\b/gi, '')
+      .replace(/\s{2,}/g, ' ')
+      .trim();
   }
 
   function dayKey(iso) {
@@ -355,6 +362,16 @@
     return d.toLocaleDateString('fr-FR', { weekday: 'short', day: 'numeric', month: 'short' });
   }
 
+  function fmtUpdatedSubtitle(d) {
+    const datePart = d.toLocaleDateString('fr-FR', { day: '2-digit', month: '2-digit', year: 'numeric' });
+    const timePart = d.toLocaleTimeString('fr-FR', {
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false,
+    });
+    return `Mis à jour le ${datePart} à ${timePart}`;
+  }
+
   function getNext7DayKeys(baseDate = new Date()) {
     const start = new Date(baseDate);
     start.setHours(12, 0, 0, 0);
@@ -364,15 +381,73 @@
     });
   }
 
-  function populateFilterOptions() {
+  function getAllCities() {
+    return uniqueSorted(allSlots.map(s => s.city));
+  }
+
+  function getAllClubs() {
+    return uniqueSorted(allSlots.map(s => s.club));
+  }
+
+  function getCitiesForClub(club) {
+    if (!club) return getAllCities();
+    return uniqueSorted(allSlots.filter(s => s.club === club).map(s => s.city));
+  }
+
+  function getClubsForCity(city) {
+    if (!city) return getAllClubs();
+    return uniqueSorted(allSlots.filter(s => s.city === city).map(s => s.club));
+  }
+
+  function setSelectOptions(selectEl, values, defaultLabel) {
+    const previousValue = selectEl.value;
+    selectEl.innerHTML = '';
+
+    const defaultOption = document.createElement('option');
+    defaultOption.value = '';
+    defaultOption.textContent = defaultLabel;
+    selectEl.appendChild(defaultOption);
+
+    values.forEach(v => {
+      const o = document.createElement('option');
+      o.value = v;
+      o.textContent = v;
+      selectEl.appendChild(o);
+    });
+
+    if (values.includes(previousValue)) {
+      selectEl.value = previousValue;
+    } else {
+      selectEl.value = '';
+    }
+  }
+
+  function syncLinkedFilters(changedBy = null) {
+    if (changedBy) state.lastChangedFilter = changedBy;
+
+    if (state.lastChangedFilter === 'city' && state.city) {
+      const clubsForCity = getClubsForCity(state.city);
+      if (!clubsForCity.includes(state.club)) state.club = '';
+    }
+
+    const cityOptions = getAllCities();
+    const clubOptions = state.city ? getClubsForCity(state.city) : getAllClubs();
+
+    if (state.city && !cityOptions.includes(state.city)) {
+      state.city = cityOptions[0] || '';
+    }
+    if (state.club && !clubOptions.includes(state.club)) {
+      state.club = '';
+    }
+
     const citySel = document.getElementById('filter-city');
     const clubSel = document.getElementById('filter-club');
-    uniqueSorted(allSlots.map(s => s.city)).forEach(v => {
-      const o = document.createElement('option'); o.value = v; o.textContent = v; citySel.appendChild(o);
-    });
-    uniqueSorted(allSlots.map(s => s.club)).forEach(v => {
-      const o = document.createElement('option'); o.value = v; o.textContent = v; clubSel.appendChild(o);
-    });
+
+    setSelectOptions(citySel, cityOptions, 'Toutes les villes');
+    setSelectOptions(clubSel, clubOptions, 'Tous les clubs');
+
+    citySel.value = state.city;
+    clubSel.value = state.club;
   }
 
   function renderDayTabs() {
@@ -426,8 +501,8 @@
       row.innerHTML = `
         <div class="time">${fmtTime(s.start)}<small>${fmtEndTime(s.start, s.durationMinutes)}</small></div>
         <div class="info">
-          <div class="club">${s.club} — ${s.court}</div>
-          <div class="place">${s.city}</div>
+          <div class="club">${s.club} (${s.city})</div>
+          <div class="place">${fmtCourtName(s.court)}</div>
         </div>
         <div class="badge">${fmtDuration(s.durationMinutes)}</div>
       `;
@@ -496,8 +571,8 @@
       const date = document.createElement('div');
       date.className = 'latest-date';
       date.textContent = latest
-        ? `Dernier jour scrappé: ${fmtIsoDate(latest.availabilityDate)}`
-        : "Aucun scrape pour aujourd'hui et après";
+        ? `Dernier jour disponible: ${fmtIsoDate(latest.availabilityDate)}`
+        : "Pas de data pour aujourd'hui et après";
 
       const bars = document.createElement('div');
       bars.className = 'bars';
@@ -528,16 +603,23 @@
   }
 
   function attachFilterHandlers() {
-    document.getElementById('filter-city').addEventListener('change', e => { state.city = e.target.value; render(); });
-    document.getElementById('filter-club').addEventListener('change', e => { state.club = e.target.value; render(); });
+    document.getElementById('filter-city').addEventListener('change', e => {
+      state.city = e.target.value;
+      syncLinkedFilters('city');
+      render();
+    });
+    document.getElementById('filter-club').addEventListener('change', e => {
+      state.club = e.target.value;
+      syncLinkedFilters('club');
+      render();
+    });
     document.getElementById('filter-duration-min').addEventListener('change', e => {
       state.durationMin = Number(e.target.value || 0);
       render();
     });
     document.getElementById('reset').addEventListener('click', () => {
-      state.city = ''; state.club = ''; state.durationMin = 0;
-      document.getElementById('filter-city').value = '';
-      document.getElementById('filter-club').value = '';
+      state.city = ''; state.club = ''; state.durationMin = 0; state.lastChangedFilter = null;
+      syncLinkedFilters();
       document.getElementById('filter-duration-min').value = '0';
       render();
     });
@@ -561,14 +643,19 @@
       days = uniqueSorted(allSlots.map(s => dayKey(s.start)));
       state.day = days[0] || null;
 
-      const generatedLabels = [];
-      if (data.generatedAt) generatedLabels.push('Dispos: ' + new Date(data.generatedAt).toLocaleString('fr-FR'));
-      if (scrapeData.generatedAt) generatedLabels.push('Fraîcheur: ' + new Date(scrapeData.generatedAt).toLocaleString('fr-FR'));
-      document.getElementById('updated').textContent = generatedLabels.length
-        ? 'Mis à jour : ' + generatedLabels.join(' | ')
-        : '';
+      const generatedAtDates = [data.generatedAt, scrapeData.generatedAt]
+        .filter(Boolean)
+        .map(value => new Date(value))
+        .filter(d => !Number.isNaN(d.getTime()));
 
-      populateFilterOptions();
+      if (generatedAtDates.length) {
+        const latestGeneratedAt = new Date(Math.max(...generatedAtDates.map(d => d.getTime())));
+        document.getElementById('updated').textContent = fmtUpdatedSubtitle(latestGeneratedAt);
+      } else {
+        document.getElementById('updated').textContent = '';
+      }
+
+      syncLinkedFilters();
       attachFilterHandlers();
       render();
     } catch (err) {

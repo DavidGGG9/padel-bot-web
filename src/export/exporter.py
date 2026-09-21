@@ -1,6 +1,6 @@
 import json
 import logging
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -44,7 +44,9 @@ class Exporter:
         }
 
     async def export_availabilities(self) -> None:
-        today = datetime.now(tz=ZoneInfo(self._settings.TIMEZONE)).date().isoformat()
+        tz = ZoneInfo(self._settings.TIMEZONE)
+        now = datetime.now(tz=tz)
+        today = now.date().isoformat()
 
         async with instantiate_mongodb_client(
             user=self._settings.MDB_USER,
@@ -74,6 +76,17 @@ class Exporter:
                     latest[key] = doc
 
             availabilities = [self._map_availabilities(doc) for doc in latest.values()]
+
+            # Keep only slots whose end time is at least 30 minutes from now.
+            cutoff = now + timedelta(minutes=30)
+            availabilities = [
+                slot
+                for slot in availabilities
+                if (
+                    datetime.fromisoformat(slot["start"]).replace(tzinfo=tz)
+                    + timedelta(minutes=slot["durationMinutes"])
+                ) >= cutoff
+            ]
 
             output = {
                 "generatedAt": datetime.now(UTC).isoformat(),

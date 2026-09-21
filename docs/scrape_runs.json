@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-20T16:40:52.783243+00:00",
+  "generatedAt": "2026-09-21T05:53:07.743565+00:00",
   "scrapeRuns": [
     {
       "id": "6a8207dd8c28b54d38c1a1fc",
@@ -866,6 +866,14 @@
       "status": "error"
     },
     {
+      "id": "6ab010fa24a6443a3f6c9f47",
+      "club": "Hangar",
+      "availabilityDate": "2026-09-21",
+      "scrapedAt": "2026-09-20T16:59:38.661000",
+      "slotsCount": 2,
+      "status": "success"
+    },
+    {
       "id": "6aaeed5b24a6443a3f6c3282",
       "club": "Kaz \u00e0 Padel",
       "availabilityDate": "2026-09-21",
@@ -912,6 +920,14 @@
       "scrapedAt": "2026-09-20T05:27:38.247000",
       "slotsCount": 0,
       "status": "error"
+    },
+    {
+      "id": "6ab0110124a6443a3f6c9f48",
+      "club": "Hangar",
+      "availabilityDate": "2026-09-22",
+      "scrapedAt": "2026-09-20T16:59:45.767000",
+      "slotsCount": 42,
+      "status": "success"
     },
     {
       "id": "6aaeed6124a6443a3f6c3285",
@@ -962,6 +978,14 @@
       "status": "error"
     },
     {
+      "id": "6ab0110724a6443a3f6c9f49",
+      "club": "Hangar",
+      "availabilityDate": "2026-09-23",
+      "scrapedAt": "2026-09-20T16:59:51.458000",
+      "slotsCount": 1,
+      "status": "success"
+    },
+    {
       "id": "6aaeed6824a6443a3f6c3289",
       "club": "Kaz \u00e0 Padel",
       "availabilityDate": "2026-09-23",
@@ -1008,6 +1032,14 @@
       "scrapedAt": "2026-09-20T05:28:26.733000",
       "slotsCount": 0,
       "status": "error"
+    },
+    {
+      "id": "6ab0110e24a6443a3f6c9f4b",
+      "club": "Hangar",
+      "availabilityDate": "2026-09-24",
+      "scrapedAt": "2026-09-20T16:59:58.783000",
+      "slotsCount": 50,
+      "status": "success"
     },
     {
       "id": "6aaeed7424a6443a3f6c328d",
@@ -1058,6 +1090,14 @@
       "status": "error"
     },
     {
+      "id": "6ab0111724a6443a3f6c9f52",
+      "club": "Hangar",
+      "availabilityDate": "2026-09-25",
+      "scrapedAt": "2026-09-20T17:00:07.601000",
+      "slotsCount": 9,
+      "status": "success"
+    },
+    {
       "id": "6aaeed7d24a6443a3f6c3293",
       "club": "Kaz \u00e0 Padel",
       "availabilityDate": "2026-09-25",
@@ -1106,6 +1146,14 @@
       "status": "error"
     },
     {
+      "id": "6ab0111e24a6443a3f6c9f54",
+      "club": "Hangar",
+      "availabilityDate": "2026-09-26",
+      "scrapedAt": "2026-09-20T17:00:14.779000",
+      "slotsCount": 2,
+      "status": "success"
+    },
+    {
       "id": "6aaeed8b24a6443a3f6c329a",
       "club": "Kaz \u00e0 Padel",
       "availabilityDate": "2026-09-26",
@@ -1152,6 +1200,14 @@
       "scrapedAt": "2026-09-20T05:28:35.275000",
       "slotsCount": 0,
       "status": "error"
+    },
+    {
+      "id": "6ab0112424a6443a3f6c9f55",
+      "club": "Hangar",
+      "availabilityDate": "2026-09-27",
+      "scrapedAt": "2026-09-20T17:00:20.997000",
+      "slotsCount": 10,
+      "status": "success"
     },
     {
       "id": "6aaeed9224a6443a3f6c329e",
