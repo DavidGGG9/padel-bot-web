@@ -71,9 +71,9 @@ jobs:
         env:
           AVAILABILITIES_OUTPUT_PATH: docs/availabilities.json
           SCRAPE_RUNS_OUTPUT_PATH: docs/scrape_runs.json
-          MDB_USER: ${{ secrets.MDB_USER }}
-          MDB_PASSWORD: ${{ secrets.MDB_PASSWORD }}
-          DB_NAME: ${{ secrets.DB_NAME }}
+          MDB_USER: ${{ secrets.MDB_USER_PROD }}
+          MDB_PASSWORD: ${{ secrets.MDB_PASSWORD_PROD }}
+          DB_NAME: ${{ secrets.DB_NAME_PROD }}
           COLLECTION_NAME: ${{ secrets.COLLECTION_NAME }}
           TIMEZONE: ${{ vars.TIMEZONE }}
         run: uv run python -m src.main
