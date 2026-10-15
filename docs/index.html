@@ -29,16 +29,16 @@
     position: relative;
     background: var(--primary);
     color: var(--primary-ink);
-    padding: 20px 16px 24px;
+    padding: 20px 16px 44px;
   }
   .beta-badge {
     position: absolute;
-    top: 16px;
+    bottom: 12px;
     right: 16px;
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 2px;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 6px;
     text-align: right;
     font-size: 11px;
     line-height: 1.2;
@@ -347,7 +347,7 @@
       position: static;
       width: auto;
       flex-direction: row;
-      margin-top: -16px;
+      margin-top: 16px;
     }
     .view-tab { width: auto; flex: 1; }
   }
@@ -356,7 +356,7 @@
 <body>
 
 <header>
-  <h1>PadelBot - Disponibilités des terrains à la Réunion</h1>
+  <h1>PadelBot - Trouvez un terrain à la Réunion</h1>
   <p class="updated" id="updated"></p>
   <div class="beta-badge" aria-label="Version 0.1 Beta, en cours de test">
     <strong>Version 0.1 (Beta)</strong>
