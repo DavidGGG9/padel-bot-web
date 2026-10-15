@@ -100,13 +100,19 @@ class Exporter:
             logger.info("Wrote %d availabilities to %s", len(availabilities), output_path)
 
     async def export_scrape_runs(self) -> None:
+        tz = ZoneInfo(self._settings.TIMEZONE)
+        now = datetime.now(tz=tz)
+        today = now.date().isoformat()
+        
         async with instantiate_mongodb_client(
             user=self._settings.MDB_USER,
             password=self._settings.MDB_PASSWORD.get_secret_value(),
         ) as client:
             collection = client[self._settings.DB_NAME]["scrape_runs"]
 
-            cursor = collection.find().sort([("availability_date", 1), ("club", 1), ("scraped_at", -1)])
+            cursor = collection\
+                .find({"availability_date": {"$gte": today}})\
+                .sort([("availability_date", 1), ("club", 1), ("scraped_at", -1)])
             raw_docs = await cursor.to_list(length=None)
 
             # Dedup: keep only the most recent scraped_at per (club, availability_date).

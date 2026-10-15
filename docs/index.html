@@ -396,6 +396,13 @@
 <script>
   const DATA_URL = './availabilities.json';
   const SCRAPE_RUNS_URL = './scrape_runs.json';
+  const REUNION_TIME_ZONE = 'Indian/Reunion';
+  const reunionDateFormatter = new Intl.DateTimeFormat('en-CA', {
+    timeZone: REUNION_TIME_ZONE,
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  });
   let allSlots = [];
   let scrapeRuns = [];
   let days = [];
@@ -454,6 +461,10 @@
     return d.toLocaleDateString('fr-FR', { weekday: 'short', day: 'numeric', month: 'short' });
   }
 
+  function reunionDateKey(date = new Date()) {
+    return reunionDateFormatter.format(date);
+  }
+
   function fmtUpdatedSubtitle(d) {
     const datePart = d.toLocaleDateString('fr-FR', { day: '2-digit', month: '2-digit', year: 'numeric' });
     const timePart = d.toLocaleTimeString('fr-FR', {
@@ -464,10 +475,10 @@
     return `Mis à jour le ${datePart} à ${timePart}`;
   }
 
-  function getNext7DayKeys(baseDate = new Date()) {
-    const start = new Date(baseDate);
-    start.setHours(12, 0, 0, 0);
-    return Array.from({ length: 7 }, (_, i) => {
+  function getNext10DayKeys(baseDate = new Date()) {
+    const [year, month, day] = reunionDateKey(baseDate).split('-').map(Number);
+    const start = new Date(Date.UTC(year, month - 1, day, 12));
+    return Array.from({ length: 10 }, (_, i) => {
       const d = new Date(start.getTime() + i * 86400000);
       return d.toISOString().slice(0, 10);
     });
@@ -597,7 +608,7 @@
     const freshList = document.getElementById('fresh-list');
     const summary = document.getElementById('fresh-summary');
     freshList.innerHTML = '';
-    const todayKey = new Date().toISOString().slice(0, 10);
+    const todayKey = reunionDateKey();
 
     if (!scrapeRuns.length) {
       summary.textContent = '';
@@ -615,7 +626,7 @@
     });
 
     const clubs = [...byClub.keys()].sort((a, b) => a.localeCompare(b));
-    const next7 = getNext7DayKeys();
+    const next10 = getNext10DayKeys();
     summary.textContent = `${clubs.length} club${clubs.length > 1 ? 's' : ''} suivis`;
 
     clubs.forEach(club => {
@@ -632,7 +643,7 @@
 
       const statusByDate = new Map();
       runs.forEach(run => statusByDate.set(run.availabilityDate, String(run.status).toLowerCase()));
-      const sevenDaysOk = next7.every(day => statusByDate.get(day) === 'success');
+      const tenDaysOk = next10.every(day => statusByDate.get(day) === 'success');
 
       const card = document.createElement('article');
       card.className = 'club-status';
@@ -646,8 +657,8 @@
       name.textContent = clubCity ? `${club} (${clubCity})` : club;
 
       const tick = document.createElement('div');
-      tick.className = 'tick ' + (sevenDaysOk ? 'ok' : 'ko');
-      tick.textContent = sevenDaysOk ? '✓ Données à jour' : '⚠️ Données pas à jour';
+      tick.className = 'tick ' + (tenDaysOk ? 'ok' : 'ko');
+      tick.textContent = tenDaysOk ? '✓ Données à jour' : '⚠️ Données manquantes';
 
       row.appendChild(name);
       row.appendChild(tick);
