@@ -38,7 +38,7 @@
   }
   header .updated {
     margin: 0;
-    font-size: 12.5px;
+    font-size: 13.5px;
     color: rgba(255,255,255,0.72);
   }
   main {
@@ -97,6 +97,41 @@
     background: var(--surface);
   }
   .filters .search { grid-column: 1 / -1; }
+  .ms { position: relative; }
+  .ms summary {
+    list-style: none;
+    padding: 9px 10px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 14px;
+    background: var(--surface);
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .ms summary::-webkit-details-marker { display: none; }
+  .ms-options {
+    position: absolute;
+    left: 0; right: 0;
+    top: calc(100% + 4px);
+    max-height: 260px;
+    overflow-y: auto;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 4px;
+    z-index: 10;
+  }
+  .ms-options label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 8px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .ms-options input { width: auto; }
   .filters .reset {
     grid-column: 1 / -1;
     text-align: right;
@@ -246,19 +281,42 @@
   }
   .club-status .bars {
     display: flex;
-    align-items: flex-end;
-    gap: 4px;
-    min-height: 52px;
+    align-items: flex-start;
+    gap: 6px;
     overflow-x: auto;
     padding: 6px 1px 2px;
     scrollbar-width: thin;
   }
-  .club-status .bar {
-    width: 12px;
-    height: 40px;
-    border-radius: 4px;
-    border: 1px solid rgba(0, 0, 0, 0.08);
+  .club-status .day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
     flex: 0 0 auto;
+    width: 30px;
+  }
+  .club-status .day-label {
+    font-size: 10.5px;
+    line-height: 1.15;
+    color: var(--muted);
+    text-align: center;
+  }
+  .club-status .day-label b {
+    display: block;
+    font-size: 12px;
+    color: var(--ink);
+  }
+  .club-status .bar {
+    width: 100%;
+    height: 28px;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
   }
   .club-status .bar.ok { background: #3CB371; }
   .club-status .bar.ko { background: #D64545; }
@@ -287,20 +345,14 @@
 <main>
   <div class="view-tabs">
     <button class="view-tab active" id="tab-availabilities" type="button">Disponibilités</button>
-    <button class="view-tab" id="tab-freshness" type="button">Fraîcheur des données</button>
+    <button class="view-tab" id="tab-freshness" type="button">Les clubs</button>
   </div>
 
   <section class="panel" id="panel-availabilities">
     <div class="filters">
-      <select id="filter-city"><option value="">Toutes les villes</option></select>
-      <select id="filter-club"><option value="">Tous les clubs</option></select>
-      <select class="search" id="filter-duration-min">
-        <option value="0">Durée min: toutes</option>
-        <option value="30">Durée min: 30 min</option>
-        <option value="60">Durée min: 60 min</option>
-        <option value="90">Durée min: 90 min</option>
-        <option value="120">Durée min: 120 min</option>
-      </select>
+      <details class="ms" id="filter-city"><summary>Toutes les villes</summary><div class="ms-options"></div></details>
+      <details class="ms" id="filter-club"><summary>Tous les clubs</summary><div class="ms-options"></div></details>
+      <details class="ms search" id="filter-duration"><summary>Toutes les durées</summary><div class="ms-options"></div></details>
       <button class="reset" id="reset">Réinitialiser les filtres</button>
     </div>
 
@@ -325,7 +377,13 @@
   let allSlots = [];
   let scrapeRuns = [];
   let days = [];
-  let state = { city: '', club: '', durationMin: 0, day: null, view: 'availabilities', lastChangedFilter: null };
+  const DURATION_BUCKETS = [
+    { id: '30', label: '30 min', match: d => d === 30 },
+    { id: '60', label: '1h et +', match: d => d >= 60 },
+    { id: '120', label: '2h et +', match: d => d >= 120 },
+  ];
+  const DEFAULT_DURATIONS = ['60', '120'];
+  let state = { city: [], club: [], durations: [...DEFAULT_DURATIONS], day: null, view: 'availabilities' };
 
   function fmtTime(iso) {
     const d = new Date(iso);
@@ -401,65 +459,55 @@
     return uniqueSorted(allSlots.map(s => s.club));
   }
 
-  function getCitiesForClub(club) {
-    if (!club) return getAllCities();
-    return uniqueSorted(allSlots.filter(s => s.club === club).map(s => s.city));
+  function getClubsForCities(cities) {
+    if (!cities.length) return getAllClubs();
+    return uniqueSorted(allSlots.filter(s => cities.includes(s.city)).map(s => s.club));
   }
 
-  function getClubsForCity(city) {
-    if (!city) return getAllClubs();
-    return uniqueSorted(allSlots.filter(s => s.city === city).map(s => s.club));
+  function getAllDurations() {
+    return DURATION_BUCKETS.map(b => b.id);
   }
 
-  function setSelectOptions(selectEl, values, defaultLabel) {
-    const previousValue = selectEl.value;
-    selectEl.innerHTML = '';
-
-    const defaultOption = document.createElement('option');
-    defaultOption.value = '';
-    defaultOption.textContent = defaultLabel;
-    selectEl.appendChild(defaultOption);
-
+  function setMultiOptions(el, values, selected, defaultLabel, labelFn, onChange) {
+    const box = el.querySelector('.ms-options');
+    box.innerHTML = '';
+    const allLabel = document.createElement('label');
+    const allCb = document.createElement('input');
+    allCb.type = 'checkbox';
+    allCb.checked = values.length > 0 && values.every(v => selected.includes(v));
+    allCb.addEventListener('change', () => onChange(allCb.checked ? [...values] : []));
+    allLabel.appendChild(allCb);
+    allLabel.appendChild(document.createTextNode('Tout sélectionner'));
+    box.appendChild(allLabel);
     values.forEach(v => {
-      const o = document.createElement('option');
-      o.value = v;
-      o.textContent = v;
-      selectEl.appendChild(o);
+      const label = document.createElement('label');
+      const cb = document.createElement('input');
+      cb.type = 'checkbox';
+      cb.checked = selected.includes(v);
+      cb.addEventListener('change', () => {
+        const next = cb.checked ? [...selected, v] : selected.filter(x => x !== v);
+        onChange(next);
+      });
+      label.appendChild(cb);
+      label.appendChild(document.createTextNode(labelFn(v)));
+      box.appendChild(label);
     });
-
-    if (values.includes(previousValue)) {
-      selectEl.value = previousValue;
-    } else {
-      selectEl.value = '';
-    }
+    const isAll = !selected.length || values.every(v => selected.includes(v));
+    el.querySelector('summary').textContent = isAll
+      ? defaultLabel
+      : selected.map(labelFn).join(', ');
   }
 
-  function syncLinkedFilters(changedBy = null) {
-    if (changedBy) state.lastChangedFilter = changedBy;
+  function syncLinkedFilters() {
+    const clubOptions = getClubsForCities(state.city);
+    state.club = state.club.filter(c => clubOptions.includes(c));
 
-    if (state.lastChangedFilter === 'city' && state.city) {
-      const clubsForCity = getClubsForCity(state.city);
-      if (!clubsForCity.includes(state.club)) state.club = '';
-    }
-
-    const cityOptions = getAllCities();
-    const clubOptions = state.city ? getClubsForCity(state.city) : getAllClubs();
-
-    if (state.city && !cityOptions.includes(state.city)) {
-      state.city = cityOptions[0] || '';
-    }
-    if (state.club && !clubOptions.includes(state.club)) {
-      state.club = '';
-    }
-
-    const citySel = document.getElementById('filter-city');
-    const clubSel = document.getElementById('filter-club');
-
-    setSelectOptions(citySel, cityOptions, 'Toutes les villes');
-    setSelectOptions(clubSel, clubOptions, 'Tous les clubs');
-
-    citySel.value = state.city;
-    clubSel.value = state.club;
+    setMultiOptions(document.getElementById('filter-city'), getAllCities(), state.city,
+      'Toutes les villes', String, v => { state.city = v; syncLinkedFilters(); render(); });
+    setMultiOptions(document.getElementById('filter-club'), getClubsForCities(state.city), state.club,
+      'Tous les clubs', String, v => { state.club = v; syncLinkedFilters(); render(); });
+    setMultiOptions(document.getElementById('filter-duration'), getAllDurations(), state.durations,
+      'Toutes les durées', id => DURATION_BUCKETS.find(b => b.id === id).label, v => { state.durations = v; syncLinkedFilters(); render(); });
   }
 
   function renderDayTabs() {
@@ -477,9 +525,10 @@
   function filteredSlotsForDay() {
     return allSlots
       .filter(s => dayKey(s.start) === state.day)
-      .filter(s => !state.city || s.city === state.city)
-      .filter(s => !state.club || s.club === state.club)
-      .filter(s => Number(s.durationMinutes) >= state.durationMin)
+      .filter(s => !state.city.length || state.city.includes(s.city))
+      .filter(s => !state.club.length || state.club.includes(s.club))
+      .filter(s => !state.durations.length || DURATION_BUCKETS.some(b =>
+        state.durations.includes(b.id) && b.match(Number(s.durationMinutes))))
       .sort((a, b) => new Date(a.start) - new Date(b.start));
   }
 
@@ -513,7 +562,7 @@
       row.innerHTML = `
         <div class="time">${fmtTime(s.start)}<small>${fmtEndTime(s.start, s.durationMinutes)}</small></div>
         <div class="info">
-          <div class="club">${s.club} (${s.city})</div>
+          <div class="club">${s.club}</div>
           <div class="place">${fmtCourtName(s.court)}</div>
         </div>
         <div class="badge">${fmtDuration(s.durationMinutes)}</div>
@@ -557,7 +606,7 @@
       });
 
       const visibleRuns = runs.filter(run => run.availabilityDate >= todayKey);
-      const latest = visibleRuns[visibleRuns.length - 1];
+      const latest = visibleRuns.filter(run => String(run.status).toLowerCase() === 'success').pop();
 
       const statusByDate = new Map();
       runs.forEach(run => statusByDate.set(run.availabilityDate, String(run.status).toLowerCase()));
@@ -571,11 +620,12 @@
 
       const name = document.createElement('div');
       name.className = 'club-name';
-      name.textContent = club;
+      const clubCity = (allSlots.find(s => s.club === club) || {}).city;
+      name.textContent = clubCity ? `${club} (${clubCity})` : club;
 
       const tick = document.createElement('div');
       tick.className = 'tick ' + (sevenDaysOk ? 'ok' : 'ko');
-      tick.textContent = sevenDaysOk ? '✓ 7j OK' : '✕ 7j incomplet';
+      tick.textContent = sevenDaysOk ? '✓ Données à jour' : '⚠️ Données pas à jour';
 
       row.appendChild(name);
       row.appendChild(tick);
@@ -584,7 +634,7 @@
       date.className = 'latest-date';
       date.textContent = latest
         ? `Dernier jour disponible: ${fmtIsoDate(latest.availabilityDate)}`
-        : "Pas de data pour aujourd'hui et après";
+        : "En cours de réparation";
 
       const bars = document.createElement('div');
       bars.className = 'bars';
@@ -593,9 +643,18 @@
         const status = String(run.status || 'unknown').toLowerCase();
         const bar = document.createElement('div');
         bar.className = 'bar ' + (status === 'success' ? 'ok' : (status === 'error' ? 'ko' : 'na'));
-        bar.title = `${club} - ${run.availabilityDate} - ${status}`;
-        bar.setAttribute('aria-label', `${club} - ${run.availabilityDate} - ${status}`);
-        bars.appendChild(bar);
+        bar.textContent = status === 'success' ? '✓' : (status === 'error' ? '✕' : '?');
+        const d = new Date(run.availabilityDate + 'T12:00:00');
+        const label = document.createElement('div');
+        label.className = 'day-label';
+        label.innerHTML = `${d.toLocaleDateString('fr-FR', { weekday: 'short' }).replace('.', '')}<b>${d.getDate()}</b>`;
+        const day = document.createElement('div');
+        day.className = 'day';
+        day.title = `${club} - ${run.availabilityDate} - ${status}`;
+        day.setAttribute('aria-label', `${club} - ${run.availabilityDate} - ${status}`);
+        day.appendChild(bar);
+        day.appendChild(label);
+        bars.appendChild(day);
       });
 
       card.appendChild(row);
@@ -615,24 +674,12 @@
   }
 
   function attachFilterHandlers() {
-    document.getElementById('filter-city').addEventListener('change', e => {
-      state.city = e.target.value;
-      syncLinkedFilters('city');
-      render();
-    });
-    document.getElementById('filter-club').addEventListener('change', e => {
-      state.club = e.target.value;
-      syncLinkedFilters('club');
-      render();
-    });
-    document.getElementById('filter-duration-min').addEventListener('change', e => {
-      state.durationMin = Number(e.target.value || 0);
-      render();
+    document.addEventListener('click', e => {
+      document.querySelectorAll('.ms[open]').forEach(d => { if (!d.contains(e.target)) d.open = false; });
     });
     document.getElementById('reset').addEventListener('click', () => {
-      state.city = ''; state.club = ''; state.durationMin = 0; state.lastChangedFilter = null;
+      state.city = []; state.club = []; state.durations = [...DEFAULT_DURATIONS];
       syncLinkedFilters();
-      document.getElementById('filter-duration-min').value = '0';
       render();
     });
 
