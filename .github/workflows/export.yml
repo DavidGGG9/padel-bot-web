@@ -6,8 +6,6 @@ on:
     paths-ignore:
       - 'docs/availabilities.json'
       - 'docs/scrape_runs.json'
-  schedule:
-    - cron: '7,37 * * * *'
   workflow_dispatch: {}
 
 # Needed to publish to GitHub Pages
