@@ -405,6 +405,7 @@
   });
   let allSlots = [];
   let scrapeRuns = [];
+  let failedScrapes = new Set();
   let days = [];
   const DURATION_BUCKETS = [
     { id: '30', label: '30 min', match: d => d === 30 },
@@ -555,9 +556,14 @@
     });
   }
 
+  function isBrokenSlot(s) {
+    return failedScrapes.has(`${s.club}|${dayKey(s.start)}`);
+  }
+
   function filteredSlotsForDay() {
     return allSlots
       .filter(s => dayKey(s.start) === state.day)
+      .filter(s => !isBrokenSlot(s))
       .filter(s => !state.city.length || state.city.includes(s.city))
       .filter(s => !state.club.length || state.club.includes(s.club))
       .filter(s => !state.durations.length || DURATION_BUCKETS.some(b =>
@@ -732,6 +738,9 @@
 
       allSlots = data.availabilities || [];
       scrapeRuns = scrapeData.scrapeRuns || [];
+      failedScrapes = new Set(scrapeRuns
+        .filter(r => String(r.status).toLowerCase() !== 'success')
+        .map(r => `${r.club}|${r.availabilityDate}`));
       days = uniqueSorted(allSlots.map(s => dayKey(s.start)));
       state.day = days[0] || null;
 
