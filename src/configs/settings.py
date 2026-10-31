@@ -12,6 +12,8 @@ class Settings(BaseSettings):
 
     AVAILABILITIES_OUTPUT_PATH: str
     SCRAPE_RUNS_OUTPUT_PATH: str
+    METEO_RUNS_OUTPUT_PATH: str = "docs/meteo_runs.json"
+    METEO_RUNS_OUTPUT_PATH: str
     MDB_USER: str
     MDB_PASSWORD: SecretStr
     DB_NAME: str

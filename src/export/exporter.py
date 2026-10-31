@@ -43,6 +43,20 @@ class Exporter:
             "status": doc["status"],
         }
 
+    @staticmethod
+    def _map_meteo_run(doc: dict) -> dict:
+        return {
+            "id": str(doc["_id"]),
+            "club": doc["club"],
+            "modelDatetime": doc["model_datetime"],
+            "localDatetime": doc["local_datetime"],
+            "precipMm1h": float(doc["precip_mm_1h"]),
+            "ghiWm2": float(doc["ghi_w_m2"]),
+            "clearskyWm2": float(doc["clearsky_w_m2"]),
+            "sunRatio": None if doc["sun_ratio"] is None else float(doc["sun_ratio"]),
+            "flag": doc["flag"],
+        }
+
     async def export_availabilities(self) -> None:
         tz = ZoneInfo(self._settings.TIMEZONE)
         now = datetime.now(tz=tz)
@@ -135,3 +149,40 @@ class Exporter:
             output_path.write_text(json.dumps(output, indent=2), encoding="utf-8")
 
             logger.info("Wrote %d scrape runs to %s", len(scrape_runs), output_path)
+
+
+    async def export_meteo_runs(self) -> None:
+        async with instantiate_mongodb_client(
+            user=self._settings.MDB_USER,
+            password=self._settings.MDB_PASSWORD.get_secret_value(),
+        ) as client:
+            collection = client[self._settings.DB_NAME]["meteo_runs"]
+
+            raw_docs = await collection.find({}).to_list(length=None)
+
+            # Dedup: keep only the most recent model_datetime per club.
+            # Keeping every forecast row (local_datetime) of that latest run.
+            latest_model: dict[str, str] = {}
+            for doc in raw_docs:
+                club = doc["club"]
+                if club not in latest_model or doc["model_datetime"] > latest_model[club]:
+                    latest_model[club] = doc["model_datetime"]
+
+            meteo_runs = [
+                self._map_meteo_run(doc)
+                for doc in raw_docs
+                if doc["model_datetime"] == latest_model[doc["club"]]
+            ]
+            meteo_runs.sort(key=lambda item: (item["club"], item["localDatetime"]))
+
+            output = {
+                "generatedAt": datetime.now(UTC).isoformat(),
+                "meteoRuns": meteo_runs,
+            }
+
+            output_path = Path(self._settings.METEO_RUNS_OUTPUT_PATH).resolve()
+            output_path.parent.mkdir(parents=True, exist_ok=True)
+            # write_text overwrites any existing file on every export
+            output_path.write_text(json.dumps(output, indent=2), encoding="utf-8")
+
+            logger.info("Wrote %d meteo runs to %s", len(meteo_runs), output_path)

@@ -228,6 +228,8 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
+  .slot .weather { flex: 0 0 auto; width: 32px; height: 32px; }
+  .slot .weather img { width: 100%; height: 100%; object-fit: contain; display: block; }
   .slot .badge {
     flex: 0 0 auto;
     background: var(--accent);
@@ -396,6 +398,14 @@
 <script>
   const DATA_URL = './availabilities.json';
   const SCRAPE_RUNS_URL = './scrape_runs.json';
+  const METEO_URL = './meteo_runs.json';
+  const WEATHER_ICONS = {
+    'nuageux': 'cloudy.png',
+    'ensoleillé': 'sunny.png',
+    'nuit sans pluie': 'night-clear.png',
+    'pluvieux': 'rainy.png',
+  };
+  let meteoByClubHour = new Map();
   const REUNION_TIME_ZONE = 'Indian/Reunion';
   const reunionDateFormatter = new Intl.DateTimeFormat('en-CA', {
     timeZone: REUNION_TIME_ZONE,
@@ -414,6 +424,22 @@
   ];
   const DEFAULT_DURATIONS = ['60', '120'];
   let state = { city: [], club: [], durations: [...DEFAULT_DURATIONS], day: null, view: 'availabilities' };
+
+  function buildMeteoIndex(runs) {
+    meteoByClubHour = new Map(runs.map(r =>
+      [`${r.club}|${new Date(r.localDatetime).getTime()}`, r.flag]));
+  }
+
+  // localDatetime is the END of the forecast hour: a slot starting 08:00 or 08:30 uses the 09:00 entry.
+  // Slot starts have no UTC offset and are Réunion local time (UTC+4).
+  function weatherFor(slot) {
+    const HOUR = 3600000;
+    const start = /[zZ]|[+-]\d\d:?\d\d$/.test(slot.start) ? slot.start : `${slot.start}+04:00`;
+    const end = (Math.floor(new Date(start).getTime() / HOUR) + 1) * HOUR;
+    const flag = meteoByClubHour.get(`${slot.club}|${end}`);
+    const file = WEATHER_ICONS[flag];
+    return file ? { flag, src: `./images/${file}` } : null;
+  }
 
   function fmtTime(iso) {
     const d = new Date(iso);
@@ -596,6 +622,7 @@
     }
 
     slots.forEach(s => {
+      const w = weatherFor(s);
       const row = document.createElement('div');
       row.className = 'slot';
       row.innerHTML = `
@@ -604,6 +631,7 @@
           <div class="club">${s.club}</div>
           <div class="place">${fmtCourtName(s.court)}</div>
         </div>
+        ${w ? `<div class="weather"><img src="${w.src}" alt="${w.flag}" title="${w.flag}"></div>` : ''}
         <div class="badge">${fmtDuration(s.durationMinutes)}</div>
       `;
       list.appendChild(row);
@@ -728,10 +756,17 @@
 
   async function init() {
     try {
-      const [availabilityRes, scrapeRunsRes] = await Promise.all([
+      const [availabilityRes, scrapeRunsRes, meteoRes] = await Promise.all([
         fetch(DATA_URL, { cache: 'no-store' }),
         fetch(SCRAPE_RUNS_URL, { cache: 'no-store' }).catch(() => null),
+        fetch(METEO_URL, { cache: 'no-store' }).catch(() => null),
       ]);
+      try {
+        const meteoData = meteoRes && meteoRes.ok ? await meteoRes.json() : { meteoRuns: [] };
+        buildMeteoIndex(meteoData.meteoRuns || []);
+      } catch (e) {
+        buildMeteoIndex([]);
+      }
 
       const data = await availabilityRes.json();
       const scrapeData = scrapeRunsRes ? await scrapeRunsRes.json() : { scrapeRuns: [] };
