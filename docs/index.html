@@ -265,84 +265,42 @@
     padding: 12px 14px;
     margin-bottom: 8px;
   }
-  .club-status .row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    margin-bottom: 10px;
-  }
   .club-status .club-name {
     font-size: 14.5px;
     font-weight: 700;
+    margin-bottom: 10px;
   }
-  .club-status .tick {
-    flex: 0 0 auto;
-    font-size: 12.5px;
-    font-weight: 700;
-    padding: 3px 8px;
-    border-radius: 999px;
-    border: 1px solid;
-  }
-  .club-status .tick.ok {
-    color: #1B5E20;
-    background: #E7F7EA;
-    border-color: #B9E2C0;
-  }
-  .club-status .tick.ko {
-    color: #7A1212;
-    background: #FBE9E9;
-    border-color: #F0B8B8;
-  }
-  .club-status .latest-date {
-    font-size: 12.5px;
-    color: var(--muted);
-    margin-bottom: 7px;
-  }
-  .club-status .bars {
+  .club-status .actions {
     display: flex;
-    align-items: flex-start;
-    gap: 6px;
-    overflow-x: auto;
-    padding: 6px 1px 2px;
-    scrollbar-width: thin;
+    flex-wrap: wrap;
+    gap: 8px;
   }
-  .club-status .day {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-    flex: 0 0 auto;
-    width: 30px;
-  }
-  .club-status .day-label {
-    font-size: 10.5px;
-    line-height: 1.15;
-    color: var(--muted);
+  .club-status .btn {
+    flex: 1 1 150px;
     text-align: center;
-  }
-  .club-status .day-label b {
-    display: block;
-    font-size: 12px;
+    padding: 9px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--surface);
     color: var(--ink);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
   }
-  .club-status .bar {
-    width: 100%;
-    height: 28px;
-    border-radius: 6px;
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 13px;
-    font-weight: 700;
+  .club-status .btn.disabled {
+    background: #EEF1F0;
+    color: var(--muted);
+    cursor: default;
+  }
+  .club-status .btn.primary {
+    background: #2A8296;
     color: #fff;
+    border-color: #2A8296;
   }
-  .club-status .bar.ok { background: #3CB371; }
-  .club-status .bar.ko { background: #D64545; }
-  .club-status .bar.na { background: #D3DBD8; }
-  @media (max-width: 480px) {
-    .club-status .row { align-items: flex-start; flex-direction: column; }
+  .club-status .btn:not(.primary):not(.disabled) {
+    color: #2A8296;
+    border-color: #2A8296;
+  }
   }
   @media (max-width: 1024px) {
     .view-tabs {
@@ -368,13 +326,14 @@
 <main>
   <div class="view-tabs">
     <button class="view-tab active" id="tab-availabilities" type="button">Disponibilités</button>
-    <button class="view-tab" id="tab-freshness" type="button">Les clubs</button>
+    <button class="view-tab" id="tab-freshness" type="button">Réserver</button>
   </div>
 
   <section class="panel" id="panel-availabilities">
     <div class="filters">
       <details class="ms" id="filter-city"><summary>Toutes les villes</summary><div class="ms-options"></div></details>
       <details class="ms" id="filter-club"><summary>Tous les clubs</summary><div class="ms-options"></div></details>
+      <details class="ms" id="filter-time"><summary>Toutes les heures</summary><div class="ms-options"></div></details>
       <details class="ms search" id="filter-duration"><summary>Toutes les durées</summary><div class="ms-options"></div></details>
       <button class="reset" id="reset">Réinitialiser les filtres</button>
     </div>
@@ -425,8 +384,14 @@ fetch('VERSION')
     { id: '60', label: '1h et +', match: d => d >= 60 },
     { id: '120', label: '2h et +', match: d => d >= 120 },
   ];
+  const TIME_BUCKETS = [
+    { id: 'morning', label: 'Matin', match: h => h < 12 },
+    { id: 'afternoon', label: 'Après-midi', match: h => h >= 12 && h < 18 },
+    { id: 'evening', label: 'Soir', match: h => h >= 18 },
+  ];
+  const slotHour = s => Number(/T(\d\d)/.exec(s.start)[1]);
   const DEFAULT_DURATIONS = ['60', '120'];
-  let state = { city: [], club: [], durations: [...DEFAULT_DURATIONS], day: null, view: 'availabilities' };
+  let state = { city: [], club: [], durations: [...DEFAULT_DURATIONS], times: [], day: null, view: 'availabilities' };
 
   function buildMeteoIndex(runs) {
     meteoByClubHour = new Map(runs.map(r =>
@@ -486,11 +451,6 @@ fetch('VERSION')
     return [...new Set(values)].sort((a, b) => a.localeCompare(b));
   }
 
-  function fmtIsoDate(isoDate) {
-    const d = new Date(isoDate + 'T12:00:00');
-    return d.toLocaleDateString('fr-FR', { weekday: 'short', day: 'numeric', month: 'short' });
-  }
-
   function reunionDateKey(date = new Date()) {
     return reunionDateFormatter.format(date);
   }
@@ -503,15 +463,6 @@ fetch('VERSION')
       hour12: false,
     });
     return `Mis à jour le ${datePart} à ${timePart}`;
-  }
-
-  function getNext10DayKeys(baseDate = new Date()) {
-    const [year, month, day] = reunionDateKey(baseDate).split('-').map(Number);
-    const start = new Date(Date.UTC(year, month - 1, day, 12));
-    return Array.from({ length: 10 }, (_, i) => {
-      const d = new Date(start.getTime() + i * 86400000);
-      return d.toISOString().slice(0, 10);
-    });
   }
 
   function getAllCities() {
@@ -569,6 +520,8 @@ fetch('VERSION')
       'Toutes les villes', String, v => { state.city = v; syncLinkedFilters(); render(); });
     setMultiOptions(document.getElementById('filter-club'), getClubsForCities(state.city), state.club,
       'Tous les clubs', String, v => { state.club = v; syncLinkedFilters(); render(); });
+    setMultiOptions(document.getElementById('filter-time'), TIME_BUCKETS.map(b => b.id), state.times,
+      'Toutes les heures', id => TIME_BUCKETS.find(b => b.id === id).label, v => { state.times = v; syncLinkedFilters(); render(); });
     setMultiOptions(document.getElementById('filter-duration'), getAllDurations(), state.durations,
       'Toutes les durées', id => DURATION_BUCKETS.find(b => b.id === id).label, v => { state.durations = v; syncLinkedFilters(); render(); });
   }
@@ -595,6 +548,8 @@ fetch('VERSION')
       .filter(s => !isBrokenSlot(s))
       .filter(s => !state.city.length || state.city.includes(s.city))
       .filter(s => !state.club.length || state.club.includes(s.club))
+      .filter(s => !state.times.length || TIME_BUCKETS.some(b =>
+        state.times.includes(b.id) && b.match(slotHour(s))))
       .filter(s => !state.durations.length || DURATION_BUCKETS.some(b =>
         state.durations.includes(b.id) && b.match(Number(s.durationMinutes))))
       .sort((a, b) => new Date(a.start) - new Date(b.start));
@@ -602,7 +557,7 @@ fetch('VERSION')
 
   function render() {
     if (state.view !== 'availabilities') {
-      renderFreshness();
+      renderClubs();
       return;
     }
 
@@ -641,96 +596,113 @@ fetch('VERSION')
     });
   }
 
-  function renderFreshness() {
-    const freshList = document.getElementById('fresh-list');
+  const CLUB_LINKS = {
+    'Oasis': {
+      web: 'https://oasis-padel.doinsport.club/home',
+      ios: 'https://apps.apple.com/gb/app/oasis-padel-club/id6450686703',
+      android: 'https://play.google.com/store/apps/details?id=com.trenicom.oasispadelclub',
+    },
+    'ATC': {
+      web: 'https://member-app.deciplus.pro/academietennisclub/calendar/',
+    },
+    'Bocage': {
+      web: 'https://bocagepadelclub.gestion-sports.com/appli/Reservation',
+      ios: 'https://apps.apple.com/us/app/bocage-padel-club/id6479243255',
+      android: 'https://play.google.com/store/apps/details?id=fr.gestionsports.bocagepadelclub',
+    },
+    'Padel de Bourbon': {
+      web: 'https://padelbourbon.doinsport.club/home',
+      ios: 'https://apps.apple.com/mv/app/padel-de-bourbon/id6499515818',
+      android: 'https://play.google.com/store/apps/details?id=com.trenicom.padeldebourbon',
+    },
+    'Champ-Fleuri': {
+      web: 'https://champfleuri.gestion-sports.com/appli/Reservation',
+      ios: 'https://apps.apple.com/fr/app/tennis-et-padel-champ-fleuri/id6758334018',
+      android: 'https://play.google.com/store/apps/details?id=fr.gestionsports.champfleuri',
+    },
+    'Hangar': {
+      web: 'https://hangarpadel.doinsport.club/home',
+      ios: 'https://apps.apple.com/us/app/hangar-padel-r%C3%A9union/id1614456493',
+      android: 'https://play.google.com/store/apps/details?id=com.trenicom.hangarpadelreunion',
+    },
+    'RPC': {
+      web: 'https://reunionpadelclub.re/login',
+    },
+    'Sain-Gym': {
+      web: 'https://padelpassion.gestion-sports.com/appli/Club',
+      ios: 'https://apps.apple.com/us/app/padel-passion/id1601666321',
+      android: 'https://play.google.com/store/apps/details?id=fr.gestionsports.padelpassion',
+    },
+    'TCD': {
+      web: 'https://tcdreunion.gestion-sports.com/appli/Reservation',
+      ios: 'https://apps.apple.com/to/app/tcd-r%C3%A9union/id6802674065',
+      android: 'https://play.google.com/store/apps/details?id=fr.gestionsports.tcdreunion',
+    },
+    'USPG': {
+      web: 'https://courtside.re/terrains',
+    },
+    'Kaz à Padel': {
+      web: 'https://kazapadel.doinsport.club/home',
+      ios: 'https://apps.apple.com/fr/app/kaz-a-padel-la-r%C3%A9union/id1567010589',
+      android: 'https://play.google.com/store/apps/details?id=com.trenicom.kazapadel',
+    },
+  };
+
+  function appStoreLinks(links) {
+    const ua = navigator.userAgent;
+    const isIos = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+    const isAndroid = /Android/.test(ua);
+    if (isIos) return links.ios ? [{ label: "Télécharger l'appli", href: links.ios }] : [];
+    if (isAndroid) return links.android ? [{ label: "Télécharger l'appli", href: links.android }] : [];
+    return [
+      links.ios && { label: "Télécharger l'appli (iOS)", href: links.ios },
+      links.android && { label: "Télécharger l'appli (Android)", href: links.android },
+    ].filter(Boolean);
+  }
+
+  function renderClubs() {
+    const list = document.getElementById('fresh-list');
     const summary = document.getElementById('fresh-summary');
-    freshList.innerHTML = '';
-    const todayKey = reunionDateKey();
+    list.innerHTML = '';
 
-    if (!scrapeRuns.length) {
-      summary.textContent = '';
-      const empty = document.createElement('div');
-      empty.className = 'empty';
-      empty.textContent = 'Aucune donnée de fraîcheur disponible (scrape_runs.json introuvable ou vide).';
-      freshList.appendChild(empty);
-      return;
-    }
-
-    const byClub = new Map();
-    scrapeRuns.forEach(run => {
-      if (!byClub.has(run.club)) byClub.set(run.club, []);
-      byClub.get(run.club).push(run);
-    });
-
-    const clubs = [...byClub.keys()].sort((a, b) => a.localeCompare(b));
-    const next10 = getNext10DayKeys();
-    summary.textContent = `${clubs.length} club${clubs.length > 1 ? 's' : ''} suivis`;
+    const clubs = [...new Set([...allSlots.map(s => s.club), ...Object.keys(CLUB_LINKS)])]
+      .sort((a, b) => a.localeCompare(b));
+    summary.textContent = `${clubs.length} club${clubs.length > 1 ? 's' : ''}`;
 
     clubs.forEach(club => {
-      const runs = byClub.get(club);
-      runs.sort((a, b) => {
-        if (a.availabilityDate === b.availabilityDate) {
-          return new Date(b.scrapedAt) - new Date(a.scrapedAt);
-        }
-        return a.availabilityDate.localeCompare(b.availabilityDate);
-      });
-
-      const visibleRuns = runs.filter(run => run.availabilityDate >= todayKey);
-      const latest = visibleRuns.filter(run => String(run.status).toLowerCase() === 'success').pop();
-
-      const statusByDate = new Map();
-      runs.forEach(run => statusByDate.set(run.availabilityDate, String(run.status).toLowerCase()));
-      const tenDaysOk = next10.every(day => statusByDate.get(day) === 'success');
-
+      const links = CLUB_LINKS[club] || {};
       const card = document.createElement('article');
       card.className = 'club-status';
-
-      const row = document.createElement('div');
-      row.className = 'row';
 
       const name = document.createElement('div');
       name.className = 'club-name';
       const clubCity = (allSlots.find(s => s.club === club) || {}).city;
       name.textContent = clubCity ? `${club} (${clubCity})` : club;
+      card.appendChild(name);
 
-      const tick = document.createElement('div');
-      tick.className = 'tick ' + (tenDaysOk ? 'ok' : 'ko');
-      tick.textContent = tenDaysOk ? '✓ Données à jour' : '⚠️ Données manquantes';
+      const storeButtons = appStoreLinks(links);
+      const buttons = [
+        links.web && { label: 'Réserver sur le site', href: links.web, primary: true },
+        ...(storeButtons.length ? storeButtons : [{ label: "Pas d'appli mobile", disabled: true }]),
+      ].filter(Boolean);
 
-      row.appendChild(name);
-      row.appendChild(tick);
-
-      const date = document.createElement('div');
-      date.className = 'latest-date';
-      date.textContent = latest
-        ? `Dernier jour disponible: ${fmtIsoDate(latest.availabilityDate)}`
-        : "En cours de réparation";
-
-      const bars = document.createElement('div');
-      bars.className = 'bars';
-
-      visibleRuns.forEach(run => {
-        const status = String(run.status || 'unknown').toLowerCase();
-        const bar = document.createElement('div');
-        bar.className = 'bar ' + (status === 'success' ? 'ok' : (status === 'error' ? 'ko' : 'na'));
-        bar.textContent = status === 'success' ? '✓' : (status === 'error' ? '✕' : '?');
-        const d = new Date(run.availabilityDate + 'T12:00:00');
-        const label = document.createElement('div');
-        label.className = 'day-label';
-        label.innerHTML = `${d.toLocaleDateString('fr-FR', { weekday: 'short' }).replace('.', '')}<b>${d.getDate()}</b>`;
-        const day = document.createElement('div');
-        day.className = 'day';
-        day.title = `${club} - ${run.availabilityDate} - ${status}`;
-        day.setAttribute('aria-label', `${club} - ${run.availabilityDate} - ${status}`);
-        day.appendChild(bar);
-        day.appendChild(label);
-        bars.appendChild(day);
+      const actions = document.createElement('div');
+      actions.className = 'actions';
+      buttons.forEach(b => {
+        const el = document.createElement(b.disabled ? 'span' : 'a');
+        el.className = 'btn' + (b.primary ? ' primary' : '') + (b.disabled ? ' disabled' : '');
+        if (b.disabled) {
+          el.setAttribute('aria-disabled', 'true');
+        } else {
+          el.href = b.href;
+          el.target = '_blank';
+          el.rel = 'noopener noreferrer';
+        }
+        el.textContent = b.label;
+        actions.appendChild(el);
       });
-
-      card.appendChild(row);
-      card.appendChild(date);
-      card.appendChild(bars);
-      freshList.appendChild(card);
+      card.appendChild(actions);
+      list.appendChild(card);
     });
   }
 
@@ -748,7 +720,7 @@ fetch('VERSION')
       document.querySelectorAll('.ms[open]').forEach(d => { if (!d.contains(e.target)) d.open = false; });
     });
     document.getElementById('reset').addEventListener('click', () => {
-      state.city = []; state.club = []; state.durations = [...DEFAULT_DURATIONS];
+      state.city = []; state.club = []; state.durations = [...DEFAULT_DURATIONS]; state.times = [];
       syncLinkedFilters();
       render();
     });
