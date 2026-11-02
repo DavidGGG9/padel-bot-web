@@ -360,9 +360,8 @@
 <header>
   <h1>PadelBot - Trouvez un terrain à la Réunion</h1>
   <p class="updated" id="updated"></p>
-  <div class="beta-badge" aria-label="Version 0.1 Beta, en cours de test">
-    <strong>Version 0.1 (Beta)</strong>
-    <span>en cours de test</span>
+  <div class="beta-badge">
+    <strong id="version">Version</strong>
   </div>
 </header>
 
@@ -396,6 +395,10 @@
 </footer>
 
 <script>
+fetch('VERSION')
+  .then(r => r.ok ? r.text() : Promise.reject())
+  .then(v => { document.getElementById('version').textContent = `Version ${v.trim()}`; })
+  .catch(() => {});
   const DATA_URL = './availabilities.json';
   const SCRAPE_RUNS_URL = './scrape_runs.json';
   const METEO_URL = './meteo_runs.json';
